@@ -1,0 +1,49 @@
+/* 
+    Document   : estiloGeneral
+    Created on : 01-nov-2013, 14:16:44
+    Author     : pedrohernandezletelier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.estado_2,.estado_11 {
+    width: 100%;
+    background: #FFA0A4;
+    height: 100%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.estado_1,.estado_3,.estado_10{
+    width: 100%;
+    background: #73FA8E;
+    height: 100%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+
+.estado_5,.estado_9 {
+    width: 100%;   
+    background: #215FE2;
+    color: #FFF;
+    height: 100%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.estado_4 {
+    width: 100%;   
+    background: #FFE000;
+    height: 100%;
+    text-align: center;
+    border-radius: 3px;
+}
+.estado_0 {
+    width: 100%;   
+    background: #FF001F;
+    height: 100%;
+    text-align: center;
+    border-radius: 3px;
+}
+

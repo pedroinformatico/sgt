@@ -1,0 +1,12 @@
+/* 
+    Document   : global
+    Created on : 03-ago-2013, 21:54:51
+    Author     : pedrohernandezletelier
+    Description:
+        Purpose of the stylesheet follows.
+*/
+.descripcion{
+    font-size: 16px;
+    font-weight: bold;
+    padding-right: 20px;
+}
