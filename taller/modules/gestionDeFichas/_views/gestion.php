@@ -4,7 +4,7 @@
 
     <!--============================Head============================-->
 
-    <? include  "../base/head.php"; ?>
+    <? include "../base/head.php"; ?>
     <!--End Head-->
 
     <!--============================Body============================-->
@@ -15,99 +15,62 @@
         <!--============================ Template Content Background ============================-->
         <div id="content_bg" class="clearfix">
             <div class="content wrapper clearfix">
-                <div class="box column-left">
-                    <!--Begin Box-->
-                    <div class="header">
-                        <p>Paciente Actual</p>
-                    </div>
-                    <div class="body">
-                        <table>  
-                            <tr style="margin: 0px;">
-                                <td style="margin: 0px; padding: 0px"><p class="descripcion">Rut :</p></td>
-                                <td style="margin: 0px; padding: 0px"><p class="detalle" id="runPatien"> </p></td>
-                            </tr>
-                            <tr style="margin: 0px;">
-                                <td style="margin: 0px; padding: 0px"><p class="descripcion">Nombre :</p></td>
-                                <td style="margin: 0px; padding: 0px"><p class="detalle" id="namePatien"> </p></td>
-                            </tr>
-                            <tr style="margin: 0px;">
-                                <td style="margin: 0px; padding: 0px"><p class="descripcion">Apellido :</p></td>
-                                <td style="margin: 0px; padding: 0px"><p class="detalle" id="lastNamePatien"> </p></td>
-                            </tr>
-                            <tr style="margin: 0px;">
-                                <td style="margin: 0px; padding: 0px"><p class="descripcion">Hora Atencion :</p></td>
-                                <td style="margin: 0px; padding: 0px"><p class="detalle" id="hourPatien"> </p></td>
-                            </tr>
-                            <tr style="margin: 0px; padding: 0px">
-                               <!-- <td colspan="2" style="margin: 0px; padding: 0px"><a href="#" style="font-size: 18px">Ver Ficha</a></td>-->
-                                <td>
-                                    <input name="button2" type="button" class="button2 divCenter" id="btnAtendido" value="Atendido" />
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-
-
-                </div>
-                <!--=========Container for Box on the Right=========-->
-                <div class="box column-right">
-                    <!--Begin Box-->
-                    <div class="header">
-                        <p>Pacientes en Espera</p>
-                    </div>
-                    <div class="body">
-                        <table id="tablePatiensInWaiting" border="0" cellpadding="0" cellspacing="0" class="grid_table wf">
-                            <thead>
-                                <tr>
-                                    <th>id</th>
-                                    <th>Rut</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                        <div class="info">
-                            <strong>Ultima actualizacion:</strong> <label id="hourUpdatetablePatiensInWaiting"></label> <a id="updatetablePatiensInWaiting" style="cursor: pointer"> Actualizacion manualmente.</a>
+                <div class="sidebar">
+                    <div class="small_box">
+                        <div class="header">
+                            <img src="../base/images/users_icon.png" alt="" width="24" height="24"> Crear
+                        </div>
+                        <div class="body">
+                            <input  type="submit" class="button2" id="nuevoUsuario" value="Nuevo cliente">
                         </div>
                     </div>
                 </div>
-                <div class="box clear">
-                    <!--Begin Box-->
-                    <div class="header">
-                        <p>Pacientes para Hoy</p>
-                    </div>
-                    <div class="body">
-                        <table id="tablePatiensForNow" border="0" cellpadding="0" cellspacing="0" class="grid_table wf">
-                            <thead>
+                <div class="main_column">
+                    <div class="small_box expose">
+                        <!--Begin Box-->
+                        <div class="header">
+                            <img src="../base/images/users_icon.png" alt="" width="24" height="24"> Buscar cliente
+                        </div>
+                        <div class="body">
+                            <table>
                                 <tr>
-                                    <th>id</th>
-                                    <th>Rut</th>
-                                    <th>Nombre</th>
-                                    <th>Apellidos</th>
-                                    <th>Hora</th>
-                                    <th>Estado</th>
+                                    <td><input type="text" placeholder="Nombre"/></td>
+                                    <td><input type="text" placeholder="Apellido"/></td>
+                                    <td><input type="text"placeholder="RUN"/></td>
+                                    <td><input type="text"placeholder="Patente"/></td>
+                                    <td><input  type="submit" class="button2" id="buscar" value="Buscar"></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-
-
-                            </tbody>
-                        </table>
-                        <div class="info">
-                            <strong>Ultima actualizacion:</strong><label id="hourUpdatetablePatiensForNow"></label> <a  id="updatetablePatiensForNow" style="cursor: pointer"> Actualizacion manualmente.</a>
+                            </table>
                         </div>
                     </div>
                 </div>
+                
+                <div class="small_box clear">
+                    <div class="header">
+                        <img src="../base/images/tables_icon.png" alt="Accordion" width="30" height="30" /> 
+                        Ficha cliente -- <span id="subModuleName"> Datos Personales </span>
+                    </div>
+                    <div class="body_vertical_nav clearfix">
+                        <!-- Grey backgound applied to box body -->
+                        <!-- Vertical nav -->
+                        <ul class="vertical_nav">
+                            <li class="active"><a href="#">Datos Personales</a></li>
+                            <li><a href="#">Veiculos</a></li>
+                        </ul>
+                        <div class="main_column">
+                            <div class="panes_vertical">
+                                <? include './datosPersonales/_views/_datosPersonales.php'; ?>
+                                <? include './vehiculos/_views/_vehiculos.php'; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
         <!--End Template Content bacground-->
         <? include '../base/footer.php'; ?>
-        <script type="text/javascript" src="./resumen/js/gestion.class.js"></script> <!--Import jquery library and jquery tools from a single file-->
+        <script type="text/javascript" src="./gestionDeFichas/js/gestion.class.js"></script> <!--Import jquery library and jquery tools from a single file-->
     </body>
     <!--End Body-->
 </html>
