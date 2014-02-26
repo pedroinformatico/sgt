@@ -22,8 +22,7 @@
         </tr>
         <tr>
             <td><input  type="submit" class="button2" id="guardarNuevoVehiculo" value="guardar"></td>
-            <td></td>
-            <td></td>
+            <td colspan="2"></td>
         </tr>
     </table>
 </div>

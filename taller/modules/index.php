@@ -2,9 +2,8 @@
 
 $base = explode($_SERVER['DOCUMENT_ROOT'], __FILE__);
 $base = explode("/taller", $base[1]);
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/_config/Profiles.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/lib/SessionManager.class.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/_config/SessionValues.php';
+$GLOBALS['__BASESERVER__']=$_SERVER['DOCUMENT_ROOT'] . $base[0] ;
+require_once $GLOBALS['__BASESERVER__'].'/taller/base/_config/DefaultIncludes.php';
 
 if (isset($_REQUEST['module'])) {
     $module = $_REQUEST['module'];
@@ -18,5 +17,6 @@ if (isset($_REQUEST['module'])) {
         }
     }
 }
+
 include './login/_views/login.php';
 ?>

@@ -45,7 +45,7 @@
                 });
 
                 $("#dialogNuevoVehiculo").dialog({
-                    autoOpen: true,
+                    autoOpen: false,
                     resizable: false,
                     width: 440,
                     modal: true,

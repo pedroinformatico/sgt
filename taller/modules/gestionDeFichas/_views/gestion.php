@@ -11,6 +11,7 @@
     <body>
 
         <? include '../base/header.php'; ?>
+        <? include './gestionDeFichas/_views/_nuevoCliente.php';?>
 
         <!--============================ Template Content Background ============================-->
         <div id="content_bg" class="clearfix">
@@ -21,7 +22,7 @@
                             <img src="../base/images/users_icon.png" alt="" width="24" height="24"> Crear
                         </div>
                         <div class="body">
-                            <input  type="submit" class="button2" id="nuevoUsuario" value="Nuevo cliente">
+                            <input  type="submit" class="button2" id="nuevoCliente" value="Nuevo cliente">
                         </div>
                     </div>
                 </div>

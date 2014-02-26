@@ -3,9 +3,9 @@
 /**
  * MySQL provides access to the underlying database.
  */
-$base= explode(  $_SERVER['DOCUMENT_ROOT'],__FILE__);
-$base= explode("/taller",$base[1] );
-require_once $_SERVER['DOCUMENT_ROOT'].$base[0].'/taller/base/_config/SQLValues.php';
+$base = explode($_SERVER['DOCUMENT_ROOT'], __FILE__);
+$base = explode("/taller", $base[1]);
+require_once $GLOBALS['__BASESERVER__']. '/taller/base/_config/SQLValues.php';
 
 class MySQL {
 

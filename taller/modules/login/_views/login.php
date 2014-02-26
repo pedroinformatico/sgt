@@ -1,8 +1,5 @@
 <?php
-$base = explode($_SERVER['DOCUMENT_ROOT'], __FILE__);
-$base = explode("/taller", $base[1]);
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/modules/login/_actions/_validateUserPermissions.php';
-
+require_once $GLOBALS['__BASESERVER__'].'/taller/modules/login/_actions/_validateUserPermissions.php';
 redirecIsLog();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">

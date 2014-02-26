@@ -1,7 +1,4 @@
-<fieldset>
-    <legend>
-        Datos del Cliente
-    </legend>
+<div id="dialogNuevoCliente" title="Agregar nuevo cliente">
     <table>
         <tr>
             <td>Nombres</td>
@@ -41,10 +38,8 @@
             <td> <select><option>-- Seleccione --</option></select></td>
         </tr>
         <tr>
-            <td>Seleccione Patente</td> 
-        </tr>
-        <tr>
-            <td><select><option>-- Seleccione --</option></select></td>
+            <td><input  type="submit" class="button2" id="guardarNuevoCliente" value="guardar"></td>
+            <td colspan="3"></td> 
         </tr>
     </table>
-</fieldset>
+</div>
