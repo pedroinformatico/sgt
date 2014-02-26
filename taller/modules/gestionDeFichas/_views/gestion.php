@@ -48,19 +48,19 @@
                 <div class="small_box clear">
                     <div class="header">
                         <img src="../base/images/tables_icon.png" alt="Accordion" width="30" height="30" /> 
-                        Ficha cliente -- <span id="subModuleName"> Datos Personales </span>
+                        Ficha cliente -- <span id="subModuleName"> Vehiculos </span>
                     </div>
                     <div class="body_vertical_nav clearfix">
                         <!-- Grey backgound applied to box body -->
                         <!-- Vertical nav -->
                         <ul class="vertical_nav">
-                            <li class="active"><a href="#">Datos Personales</a></li>
-                            <li><a href="#">Veiculos</a></li>
+                            <li  class="active"><a href="#">Vehiculos</a></li>
+                            <li><a href="#">Datos Personales</a></li>
                         </ul>
                         <div class="main_column">
                             <div class="panes_vertical">
-                                <? include './datosPersonales/_views/_datosPersonales.php'; ?>
                                 <? include './vehiculos/_views/_vehiculos.php'; ?>
+                                <? include './datosPersonales/_views/_datosPersonales.php'; ?>
                             </div>
                         </div>
                     </div>
