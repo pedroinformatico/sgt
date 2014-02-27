@@ -8,6 +8,14 @@ require_once $_SESSION['__BASESERVER__'].'/base/lib/MySQL.php';
 require_once $_SESSION['__BASESERVER__'].'/base/_config/SessionValues.php';
 
 
+function relacionarClienteAuto($idAuto, $idCliente){
+    $sql = "INSERT INTO cliente_auto (idAuto,idCliente) 
+            VALUES ({$idAuto},{$idCliente});";
+    $db = MySQL::getInstance();
+    $db->setQuery($sql);
+    return $db->insert(); //Retorna id del insert
+}
+
 function obtenerPatentesPorCliente($idCliente){
     $sql = "SELECT a.patente, a.idAuto 
             FROM cliente_auto AS ca 
