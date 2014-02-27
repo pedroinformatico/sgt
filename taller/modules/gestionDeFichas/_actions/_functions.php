@@ -8,4 +8,7 @@ require_once $_SESSION['__BASESERVER__'].'/base/lib/MySQL.php';
 require_once $_SESSION['__BASESERVER__'].'/base/_config/SessionValues.php';
 
 //validate("resumen");
+
+
+
 ?>
