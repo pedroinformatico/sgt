@@ -17,7 +17,6 @@
         ui: {
             init: function() {
                 datosPersonales.ui.setEvents();
-                datosPersonales.actions.getClientActualInSession();
                 $(".datosClientes").attr("readonly", true);
                 $('.selectDatosClientes').prop('disabled', 'disabled');
                 $("#guardarEdicionCliente").hide();
@@ -38,29 +37,22 @@
             }
         },
         actions: {
-            getClientActualInSession: function(callback) {
-//                jQuery.ajax({
-//                    type: 'GET',
-//                    url: "datosPersonales/_actions/_getPatienInSession.php",
-//                    contentType: 'json',
-//                    dataType: 'json',
-//                    cache: false,
-//                    success: function(data) {
-//                        datosPersonales.callbacks.addPatien(data);
-//                        if (helper.isObjectExist(callback))
-//                            callback(data);
-//                    },
-//                    error: function() {
-//                    },
-//                    complete: function(data) {
-//                    }
-//                });
-            }
+            
         },
         callbacks: {
-            addPatien: function(object) {
-                if (object === null)
-                    return;
+            setCliente: function(data) {
+                $("#nombreClienteActual").val(data.nombres);
+                $("#apellidoClienteActual").val(data.apellidos);
+                $("#runClienteActual").val(data.run);
+                $("#correoClienteActual").val(data.correo);
+                $("#calleClienteActual").val(data.calle);
+                $("#poblacionClienteActual").val(data.poblacion);
+                $("#numeroClienteActual").val(data.numeroDomicilio);
+                $("#deptoClienteActual").val(data.depto);
+                $("#celularClienteActual").val(data.telefonoCelular);
+                $("#fijoClienteActual").val(data.telefonoFijo);
+                //$("#nuevaRegion").val();
+                //$("#nuevaComuna").val('');
             }
         }
     };

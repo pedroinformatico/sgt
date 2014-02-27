@@ -11,7 +11,7 @@
     <body>
 
         <? include '../base/header.php'; ?>
-        <? include './datosPersonales/_views/_nuevoCliente.php';?>
+        
 
         <!--============================ Template Content Background ============================-->
         <div id="content_bg" class="clearfix">
@@ -35,17 +35,17 @@
                         <div class="body">
                             <table>
                                 <tr>
-                                    <td><input type="text" placeholder="Nombre"/></td>
-                                    <td><input type="text" placeholder="Apellido"/></td>
-                                    <td><input type="text"placeholder="RUN"/></td>
-                                    <td><input type="text"placeholder="Patente"/></td>
+                                    <td><input type="text" placeholder="Nombre" id="nombreBusqueda"/></td>
+                                    <td><input type="text" placeholder="Apellido" id="apellidoBusqueda"/></td>
+                                    <td><input type="text"placeholder="RUN" id="runBusqueda"/></td>
+                                    <td><input type="text"placeholder="Patente" id="patenteBusqueda"/></td>
                                     <td><input  type="submit" class="button2" id="buscar" value="Buscar"></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="small_box clear">
                     <div class="header">
                         <img src="../base/images/tables_icon.png" alt="Accordion" width="30" height="30" /> 
@@ -66,10 +66,12 @@
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <!--End Template Content bacground-->
+        <? include './datosPersonales/_views/_nuevoCliente.php'; ?>
+        <? include './datosPersonales/_views/_resultadoBusqueda.php'; ?>
         <? include '../base/footer.php'; ?>
         <script type="text/javascript" src="./gestionDeFichas/js/gestion.class.js"></script> <!--Import jquery library and jquery tools from a single file-->
     </body>

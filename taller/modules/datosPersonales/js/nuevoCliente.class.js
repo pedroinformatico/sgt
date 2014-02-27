@@ -80,12 +80,9 @@
             }
         },
         callbacks: {
-            addPatien: function(object) {
-                if (object === null)
-                    return;
-            }
+           
         }
     };
     nuevoCliente.ui.init();
-    window.datosPersonales = nuevoCliente;
+    window.nuevoCliente = nuevoCliente;
 })(window);

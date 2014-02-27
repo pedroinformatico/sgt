@@ -8,13 +8,12 @@
             <td>Apellidos</td>
             <td>RUN</td>
             <td>Correo</td>
-
         </tr>
         <tr>
-            <td><input type="text" class="datosClientes" /></td>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
+            <td><input type="text" class="datosClientes" id="nombreClienteActual" /></td>
+            <td><input type="text" class="datosClientes" id="apellidoClienteActual"/></td>
+            <td><input type="text" class="datosClientes" id="runClienteActual"/></td>
+            <td><input type="text" class="datosClientes" id="correoClienteActual"/></td>
         </tr>
         <tr>
             <td>Calle</td>
@@ -23,10 +22,10 @@
             <td>Dpto/Block/Otros</td>                            
         </tr>
         <tr>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
+            <td><input type="text" class="datosClientes" id="calleClienteActual"/></td>
+            <td><input type="text" class="datosClientes" id="poblacionClienteActual" /></td>
+            <td><input type="text" class="datosClientes" id="numeroClienteActual"/></td>
+            <td><input type="text" class="datosClientes" id="deptoClienteActual"/></td>
         </tr>
         <tr>
             <td>Teléfono Celular</td>
@@ -35,10 +34,10 @@
             <td>Comuna</td>                            
         </tr>
         <tr>
-            <td><input type="text" class="datosClientes"/></td>
-            <td><input type="text" class="datosClientes"/></td>
-            <td> <select class="selectDatosClientes"><option>-- Seleccione --</option></select></td>
-            <td> <select class="selectDatosClientes"><option>-- Seleccione --</option></select></td>
+            <td><input type="text" class="datosClientes" id="celularClienteActual"/></td>
+            <td><input type="text" class="datosClientes" id="fijoClienteActual"/></td>
+            <td> <select class="selectDatosClientes" id="regionClienteActual"><option>-- Seleccione --</option></select></td>
+            <td> <select class="selectDatosClientes" id="comunaClienteActual"><option>-- Seleccione --</option></select></td>
         </tr>
         <tr >
             <td colspan="4" ><input  type="submit" class="button2" id="editarCliente" value="Editar cliente"><input  type="submit" class="button2" id="guardarEdicionCliente" value="Guardar"></td>

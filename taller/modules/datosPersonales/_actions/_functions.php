@@ -9,12 +9,13 @@ require_once $_SESSION['__BASESERVER__'] . '/base/lib/MySQL.php';
 require_once $_SESSION['__BASESERVER__'] . '/base/_config/SessionValues.php';
 
 function obtenerClientesSegunParametros($nombre, $apellidos, $run, $patente) {
-    $nombre = empty($nombre) ? null : $nombre;
-    $apellidos = empty($apellidos) ? null : $apellidos;
-    $run = empty($run) ? null : $run;
+    $nombre = $nombre == "" ? "NULL" : "'".$nombre."'";
+    $apellidos = $apellidos == "" ? "NULL" : "'".$apellidos."'";
+    $run = $run == "" ? "NULL" : "'".$run."'";
 
     $sql = "SELECT 
-            CONCAT(UPPER(c.nombres),' ', UPPER(c.apellidos)) AS nombreCompleto,
+            UPPER(c.nombres) AS nombre, 
+            UPPER(c.apellidos) AS apellido,
             c.run,
             c.idCliente
             FROM 
@@ -38,6 +39,16 @@ function obtenerCliente($idCliente) {
             idCliente,nombres,apellidos,run,correo,calle,poblacion,depto,numeroDomicilio,telefonoCelular,telefonoFijo,idComuna
             FROM cliente
             WHERE idCliente = {$idCliente};";
+    $db = MySQL::getInstance();
+    $db->setQuery($sql);
+    return $db->loadObject();
+}
+
+function obtenerClientePorRun($run) {
+    $sql = "SELECT 
+            idCliente,nombres,apellidos,run,correo,calle,poblacion,depto,numeroDomicilio,telefonoCelular,telefonoFijo,idComuna
+            FROM cliente
+            WHERE run = '{$run}';";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObject();
