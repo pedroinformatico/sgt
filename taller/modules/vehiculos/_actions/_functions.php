@@ -17,7 +17,7 @@ function relacionarClienteAuto($idAuto, $idCliente){
 }
 
 function obtenerPatentesPorCliente($idCliente){
-    $sql = "SELECT a.patente, a.idAuto 
+    $sql = "SELECT a.marca, a.modelo, a.patente, a.idAuto 
             FROM cliente_auto AS ca 
             INNER JOIN auto AS a ON a.idAuto = ca.idAuto
             WHERE ca.idCliente = {$idCliente};";
