@@ -11,7 +11,7 @@
     <body>
 
         <? include '../base/header.php'; ?>
-        <? include './gestionDeFichas/_views/_nuevoCliente.php';?>
+        <? include './datosPersonales/_views/_nuevoCliente.php';?>
 
         <!--============================ Template Content Background ============================-->
         <div id="content_bg" class="clearfix">

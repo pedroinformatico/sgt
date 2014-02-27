@@ -161,10 +161,45 @@ helper = {
             }
         }
     },
+    validarMail: function(mail) {
+        var re = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+        return re.test(mail);
+    },
+    validarString: function(str) {
+        return str !== "";
+    },
+    validarCampos: function(data,errorID) {
+        for (i = 0; i < data.length; i++) {
+            switch (data[i].type) {
+                case "int":
+                    if (!this.validarEntero($("#"+data[i].id).val())) {
+                        $("#"+data[i].id).focus();
+                        $("#"+errorID).html(data[i].msg);
+                        return false;
+                    }
+                    break;
+                case "mail":
+                    if (!this.validarMail($("#"+data[i].id).val())) {
+                        $("#"+data[i].id).focus();
+                        $("#"+errorID).html(data[i].msg);
+                        return false;
+                    }
+                    break;
+                case "str":
+                    if (!this.validarString($("#"+data[i].id).val())) {
+                        $("#"+data[i].id).focus();
+                        $("#"+errorID).html(data[i].msg);
+                        return false;
+                    }
+                    break;
+            }
+        }
+        return true;
+    },
     getIniciales: function(linea) {
         var iniciales = "";
         if (linea !== null) {
-            linea+="";
+            linea += "";
             var datos = linea.split(" ");
             for (var i = 0; i < datos.length; i++) {
                 iniciales += datos[i][0] + "";
