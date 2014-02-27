@@ -6,4 +6,7 @@ require_once $GLOBALS['__BASESERVER__'].'/taller/base/lib/MySQL.php';
 require_once $GLOBALS['__BASESERVER__'].'/taller/base/_config/SessionValues.php';
 
 //validate("resumen");
+
+
+
 ?>
