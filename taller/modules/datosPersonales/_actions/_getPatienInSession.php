@@ -1,10 +1,8 @@
 <?php
 
 require_once './_functions.php';
-$base = split($_SERVER['DOCUMENT_ROOT'], __FILE__);
-$base = split("/pacientes", $base[1]);
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/pacientes/base/lib/SessionManager.class.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/pacientes/base/_config/SessionValues.php';
+require_once $GLOBALS['__BASESERVER__'].'/pacientes/base/lib/SessionManager.class.php';
+require_once $GLOBALS['__BASESERVER__'].'/pacientes/base/_config/SessionValues.php';
 
 $session = SessionManager::getInstance(SessionValues::SESSION_DEFAULT);
 
