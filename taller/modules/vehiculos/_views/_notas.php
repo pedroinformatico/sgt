@@ -1,9 +1,6 @@
 <!-- Pane 1 -->
-<div id="notasVehiculo">
-    <fieldset>
-        Notas de la Ficha <span id="patenteNotas"> XX-XX-56 </span> <br/><a id="volverLista"> cerrar detalle </a>
-    </fieldset>
-    <br/>
+<div id="notasVehiculo" title="Notas de taller para el vehiculo xx-xx-nn">
+
     <table border="0" cellpadding="0" cellspacing="0" class="grid_table wf">
         <thead>
             <tr>
@@ -16,28 +13,21 @@
             <tr>
                 <td>05/05/2013</td>
                 <td>10:34:23</td>
-                <td>nueva nota</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             </tr>
             <tr>
                 <td>05/05/2013</td>
                 <td>10:34:23</td>
-                <td>nueva nota</td>
+                <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
             </tr>
-            <tr>
-                <td>05/05/2013</td>
-                <td>10:34:23</td>
-                <td>nueva nota</td>
-            </tr>
-            <tr>
-                <td>05/05/2013</td>
-                <td>10:34:23</td>
-                <td>nueva nota</td>
-            </tr>
+
         </tbody>
         <tfoot>
             <tr >
-                <td colspan="4" ><input  type="submit" class="button2" id="nuevaVisita" value="Agregar nueva nota"></td>
+                <td colspan="2" ><input  type="submit" class="button2" id="agregarNuevaNota" value="Agregar nota"></td>
+                <td  ><textarea id="nuevaNota" style="width: 100%"></textarea></td>
             </tr>
         </tfoot>
     </table>
+
 </div>

@@ -1,11 +1,12 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 /**
  * MySQL provides access to the underlying database.
  */
-$base= explode(  $_SERVER['DOCUMENT_ROOT'],__FILE__);
-$base= explode("/taller",$base[1] );
-require_once $_SERVER['DOCUMENT_ROOT'].$base[0].'/taller/base/_config/SQLValues.php';
+require_once $_SESSION['__BASESERVER__'] . '/base/_config/SQLValues.php';
 
 class MySQL {
 

@@ -1,13 +1,9 @@
 <?php
-
-$base = explode($_SERVER['DOCUMENT_ROOT'], __FILE__);
-//error_log($base[1]);
-$base = explode("/taller", $base[1]);
-//error_log($base[0]);
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/lib/MySQL.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/lib/SessionManager.class.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/_config/Profiles.php';
-require_once $_SERVER['DOCUMENT_ROOT'] . $base[0] . '/taller/base/_config/SessionValues.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+require_once $_SESSION['__BASESERVER__'].'/base/_config/DefaultIncludes.php';
+require_once $_SESSION['__BASESERVER__'].'/base/lib/MySQL.php';
 
 function validate($module) {
     $profiles = Profiles::getInstance();

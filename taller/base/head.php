@@ -2,7 +2,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="robots" content="noindex,nofollow" />
 <!--=========Title=========-->
-<title>Sistema de Ficha Electronica Clinica Orlandi</title>
+<title>Sistema de Gestion de Talleres</title>
 <!--=========Stylesheets=========-->
 <link href="../base/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/estiloGeneral.css" rel="stylesheet" type="text/css"/>

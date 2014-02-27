@@ -11,6 +11,7 @@
     <body>
 
         <? include '../base/header.php'; ?>
+        
 
         <!--============================ Template Content Background ============================-->
         <div id="content_bg" class="clearfix">
@@ -21,7 +22,7 @@
                             <img src="../base/images/users_icon.png" alt="" width="24" height="24"> Crear
                         </div>
                         <div class="body">
-                            <input  type="submit" class="button2" id="nuevoUsuario" value="Nuevo cliente">
+                            <input  type="submit" class="button2" id="nuevoCliente" value="Nuevo cliente">
                         </div>
                     </div>
                 </div>
@@ -34,41 +35,43 @@
                         <div class="body">
                             <table>
                                 <tr>
-                                    <td><input type="text" placeholder="Nombre"/></td>
-                                    <td><input type="text" placeholder="Apellido"/></td>
-                                    <td><input type="text"placeholder="RUN"/></td>
-                                    <td><input type="text"placeholder="Patente"/></td>
+                                    <td><input type="text" placeholder="Nombre" id="nombreBusqueda"/></td>
+                                    <td><input type="text" placeholder="Apellido" id="apellidoBusqueda"/></td>
+                                    <td><input type="text"placeholder="RUN" id="runBusqueda"/></td>
+                                    <td><input type="text"placeholder="Patente" id="patenteBusqueda"/></td>
                                     <td><input  type="submit" class="button2" id="buscar" value="Buscar"></td>
                                 </tr>
                             </table>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="small_box clear">
                     <div class="header">
                         <img src="../base/images/tables_icon.png" alt="Accordion" width="30" height="30" /> 
-                        Ficha cliente -- <span id="subModuleName"> Datos Personales </span>
+                        Ficha cliente -- <span id="subModuleName"> Vehiculos </span>
                     </div>
                     <div class="body_vertical_nav clearfix">
                         <!-- Grey backgound applied to box body -->
                         <!-- Vertical nav -->
                         <ul class="vertical_nav">
-                            <li class="active"><a href="#">Datos Personales</a></li>
-                            <li><a href="#">Veiculos</a></li>
+                            <li  class="active"><a href="#">Vehiculos</a></li>
+                            <li><a href="#">Datos Personales</a></li>
                         </ul>
                         <div class="main_column">
                             <div class="panes_vertical">
-                                <? include './datosPersonales/_views/_datosPersonales.php'; ?>
                                 <? include './vehiculos/_views/_vehiculos.php'; ?>
+                                <? include './datosPersonales/_views/_datosPersonales.php'; ?>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
         <!--End Template Content bacground-->
+        <? include './datosPersonales/_views/_nuevoCliente.php'; ?>
+        <? include './datosPersonales/_views/_resultadoBusqueda.php'; ?>
         <? include '../base/footer.php'; ?>
         <script type="text/javascript" src="./gestionDeFichas/js/gestion.class.js"></script> <!--Import jquery library and jquery tools from a single file-->
     </body>

@@ -15,25 +15,66 @@
         ui: {
             init: function() {
                 vehiculos.ui.setEvents();
-                $("#notasVehiculo").hide();
+                $("#notasVehiculo").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 650,
+                    modal: true,
+                    buttons: {
+                        Cancelar: function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
+                $("#dialogNuevaVisita").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 330,
+                    modal: true,
+                    buttons: {
+                        Cancelar: function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
+
+                $("#dialogNuevoVehiculo").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 440,
+                    modal: true,
+                    buttons: {
+                        Cancelar: function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
+
             },
             setEvents: function() {
-                $("#volverLista").on("click", function() {
-                    $("#notasVehiculo").hide();
-                    $("#listaVehiculos").show();
+                $("#nuevaVisita").on("click", function() {
+                    $("#dialogNuevaVisita").dialog("open");
                 });
-                
-                $(".verDetalleVehiculo").on("click", function() {
-                    $("#notasVehiculo").show();
-                    $("#listaVehiculos").hide();
+                $("#nuevoVehiculo").on("click", function() {
+                    $("#dialogNuevoVehiculo").dialog("open");
                 });
             }
         },
         actions: {
-            
+            openEditNotes: function(id) {
+                $("#notasVehiculo").dialog("open");
+            }
         },
         callbacks: {
-            
         }
     };
     vehiculos.ui.init();

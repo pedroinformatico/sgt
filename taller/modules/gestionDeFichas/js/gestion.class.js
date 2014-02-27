@@ -23,9 +23,26 @@
                     gestion.actions.setCurTab($(this.getCurrentTab())[0].innerHTML);
                 });
 
+                $("#dialogNuevoCliente").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 570,
+                    modal: true,
+                    buttons: {
+                        Cancelar: function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
+                gestion.ui.setEvents();
             },
             setEvents: function() {
-
+                $("#nuevoCliente").on("click", function() {
+                    $("#dialogNuevoCliente").dialog("open");
+                });
             }
         },
         actions: {
