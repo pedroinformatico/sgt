@@ -1,8 +1,8 @@
 <?php
 
 require_once './_functions.php';
-require_once $GLOBALS['__BASESERVER__'].'/pacientes/base/lib/SessionManager.class.php';
-require_once $GLOBALS['__BASESERVER__'].'/pacientes/base/_config/SessionValues.php';
+require_once $_SESSION['__BASESERVER__'].'/pacientes/base/lib/SessionManager.class.php';
+require_once $_SESSION['__BASESERVER__'].'/pacientes/base/_config/SessionValues.php';
 
 $session = SessionManager::getInstance(SessionValues::SESSION_DEFAULT);
 

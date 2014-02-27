@@ -1,9 +1,12 @@
 <?php
 
+if (!isset($_SESSION)) {
+    session_start();
+}
 /**
  * MySQL provides access to the underlying database.
  */
-require_once $GLOBALS['__BASESERVER__']. '/taller/base/_config/SQLValues.php';
+require_once $_SESSION['__BASESERVER__'] . '/base/_config/SQLValues.php';
 
 class MySQL {
 

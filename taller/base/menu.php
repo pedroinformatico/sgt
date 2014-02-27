@@ -1,7 +1,10 @@
 <?
-require_once $GLOBALS['__BASESERVER__'].'/taller/base/_config/Profiles.php';
-require_once $GLOBALS['__BASESERVER__'].'/taller/base/lib/SessionManager.class.php';
-require_once $GLOBALS['__BASESERVER__'].'/taller/base/_config/SessionValues.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+require_once $_SESSION['__BASESERVER__'].'/base/_config/Profiles.php';
+require_once $_SESSION['__BASESERVER__'].'/base/lib/SessionManager.class.php';
+require_once $_SESSION['__BASESERVER__'].'/base/_config/SessionValues.php';
 
 $profiles = Profiles::getInstance();
 $SM = SessionManager::getInstance("default");

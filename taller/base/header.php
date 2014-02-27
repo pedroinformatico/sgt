@@ -1,5 +1,8 @@
 <?
-require_once $GLOBALS['__BASESERVER__'].'/taller/base/_config/DefaultIncludes.php';
+if (!isset($_SESSION)) {
+    session_start();
+}
+require_once $_SESSION['__BASESERVER__'].'/base/_config/DefaultIncludes.php';
 $SM = SessionManager::getInstance("default");
 $user = $SM->getVars(SessionValues::USER_NAME);
 $rol = $SM->getVars(SessionValues::ID_ROLE);
