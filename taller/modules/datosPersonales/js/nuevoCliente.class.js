@@ -23,7 +23,7 @@
                     if (helper.validarCampos([
                         {id: "nuevoNombre", type: "str", msg: "Debe ingresar un Nombre"},
                         {id: "nuevoApellido", type: "str", msg: "Debe ingresar un Apellido"},
-                        {id: "nuevoRun", type: "str", msg: "Debe ingresar un RUN"},
+                        {id: "nuevoRun", type: "rut", msg: "Debe ingresar un RUN valido"},
                         {id: "nuevoCorreo", type: "mail", msg: "Debe ingresar un Correo valido"}],"errorNuevoCliente")) {
                         var datos = {
                             run: $("#nuevoRun").val(),

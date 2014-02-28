@@ -5,14 +5,14 @@
             <td>Fecha Ingreso</td>
         </tr>   
         <tr>
-            <td><input type="text" id="nuevoFichaKilometraje"/></td>
-            <td><input type="text" id="nuevoFichaFechaIngreso"/></td>
+            <td><input type="text" id="nuevoVisitaKilometraje"/></td>
+            <td><input type="text" id="nuevoVisitaFechaIngreso"/></td>
         </tr>
         <tr>
             <td colspan="2">Descripción</td>
         </tr>
         <tr>
-            <td colspan="2"><textarea id="nuevoFichaDescripcion"></textarea></td>
+            <td colspan="2"><textarea id="nuevoVisitaDescripcion"></textarea></td>
         </tr>
         
     </table>

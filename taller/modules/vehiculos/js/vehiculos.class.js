@@ -11,7 +11,7 @@
 (function(window) {
     var vehiculos = {
         vars: {
-            idFichaSeleccionada:0
+            idVisitaSeleccionada:0
         },
         ui: {
             init: function() {
@@ -74,8 +74,8 @@
         actions: {
             openEditNotes: function(id) {
                 $("#notasVehiculo").dialog("open");
-                vehiculos.vars.idFichaSeleccionada = id;
-                notas.actions.obtenerNotasPorFicha(id);
+                vehiculos.vars.idVisitaSeleccionada = id;
+                notas.actions.obtenerNotasPorVisita(id);
             } 
         },
         callbacks: {

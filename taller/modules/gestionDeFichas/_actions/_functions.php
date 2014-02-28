@@ -18,7 +18,7 @@ function obtenerVisitasPorIdAuto($idAuto){
             f.descripcion,
             f.fechaIngreso,
             f.fechaRegistro
-            FROM ficha AS f  WHERE  f.idAuto = {$idAuto}";
+            FROM visita AS f  WHERE  f.idAuto = {$idAuto}";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObjectList();
@@ -26,7 +26,7 @@ function obtenerVisitasPorIdAuto($idAuto){
 
 
 function insertarVisita($idCliente,$idAuto,$kilometraje, $fechaIngreso, $descripcion){
-    $sql = "INSERT INTO ficha (idCliente,idAuto,kilometraje,fechaRegistro,  fechaIngreso, descripcion)
+    $sql = "INSERT INTO visita (idCliente,idAuto,kilometraje,fechaRegistro,  fechaIngreso, descripcion)
             VALUES ({$idCliente},{$idAuto},{$kilometraje}, curdate(), '{$fechaIngreso}','{$descripcion}');";
     error_log($sql);        
     $db = MySQL::getInstance();
@@ -42,8 +42,8 @@ function insertarNota($descripcion,$fechaNota){
     return $db->insert(); //Retorna id del insert
 }
 
-function relacionarVisitaConNota($idFicha,$idNota){
-    $sql = "INSERT INTO ficha_nota (idFicha, idNota) VALUES ({$idFicha},{$idNota})";
+function relacionarVisitaConNota($idVisita,$idNota){
+    $sql = "INSERT INTO visita_nota (idVisita, idNota) VALUES ({$idVisita},{$idNota})";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->insert(); //Retorna id del insert
@@ -63,7 +63,7 @@ function actualizarNota($descripcion,$fechaNota, $idNota){
 
 function obtenerNotasPorVisita($idVisita){
     $sql = "SELECT n.descripcion, n.fechaRegistro, n.idNota FROM 
-            ficha_nota AS fn
+            visita_nota AS fn
             INNER JOIN nota AS n ON n.idNota = fn.idNota
             WHERE fn.idVisita = {$idVisita}";
     $db = MySQL::getInstance();

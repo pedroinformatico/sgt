@@ -4,6 +4,7 @@
 <!--=========Title=========-->
 <title>Sistema de Gestion de Talleres</title>
 <!--=========Stylesheets=========-->
+<link href="../base/css/jquery-ui-date.min.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/style.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/estiloGeneral.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/blue.css" rel="stylesheet" type="text/css"/>
@@ -11,7 +12,6 @@
 <link href="../base/css/global.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/TableTools.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/TableTools_JUI.css" rel="stylesheet" type="text/css"/>
-<link href="../base/css/jquery-ui-date.min.css" rel="stylesheet" type="text/css"/>
 <link href="../base/css/showLoading.css" rel="stylesheet" type="text/css"/>
 
 <!--[if lt IE 8]>
@@ -24,6 +24,7 @@
 
 <!--=========Date picker=========-->
 <script type="text/javascript" src="../base/js/external/jquery-ui.js"></script>
+<script type="text/javascript" src="../base/js/external/jquery.Rut.min.js"></script>
 <script type="text/javascript" src="../base/js/external/jquery.ui.datepicker-es.js"></script>
 <script type="text/javascript" src="../base/js/external/jquery.tools.min.js"></script>
 <!--=========Visualize for charting=========-->

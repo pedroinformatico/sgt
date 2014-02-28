@@ -14,14 +14,14 @@
         ui: {
             init: function() {
                 nuevaVisita.ui.setEvents();
-                $("#nuevoFichaFechaIngreso").datepicker();
+                $("#nuevoVisitaFechaIngreso").datepicker();
             },
             setEvents: function() {        
                 $("#guardarNuevaVisita").on('click', function(e) {    
                   nuevaVisita.actions.insertarNuevaVisita($("#runClienteActual").val(),
-                  $("#nuevoFichaKilometraje").val(), 
-                  $("#nuevoFichaFechaIngreso").val(), 
-                  $("#nuevoFichaDescripcion").val(),
+                  $("#nuevoVisitaKilometraje").val(), 
+                  $("#nuevoVisitaFechaIngreso").val(), 
+                  $("#nuevoVisitaDescripcion").val(),
                   $("#patentes").val());
                 });
             }

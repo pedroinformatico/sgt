@@ -15,42 +15,46 @@
             init: function() {
                 notas.ui.setEvents();
             },
-            setEvents: function() {        
-                $("#agregarNuevaNota").on('click', function(e) {    
-                  notas.actions.insertarNota($("#nuevaNota").val(),
-                  vehiculos.vars.idFichaSeleccionada);
+            setEvents: function() {
+                $("#agregarNuevaNota").on('click', function(e) {
+                    if (helper.validarCampos([{id: "nuevaNota", type: "str", msg: "Debe ingresar un la descripción de la nota"}], "errorNuevaNota")) {
+                        notas.actions.insertarNota($("#nuevaNota").val(),
+                                vehiculos.vars.idVisitaSeleccionada);
+                        $("#errorNuevaNota").html("");
+                    }
                 });
             }
         },
         actions: {
-            insertarNota: function(descripcion, idFicha) {
+            insertarNota: function(descripcion, idVisita) {
+
                 jQuery.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_agregarNota.php",
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,
-                    data: { descripcion:descripcion, idFicha:idFicha},
+                    data: {descripcion: descripcion, idVisita: idVisita},
                     success: function() {
-                        alert("Se agregó una nueva nota a la visita");
-                        vehiculos.actions.openEditNotes(vehiculos.vars.idFichaSeleccionada);
+                        vehiculos.actions.openEditNotes(vehiculos.vars.idVisitaSeleccionada);
                         $("#nuevaNota").val("");
                     },
                     error: function() {
 
                     }
                 });
+
             },
-            obtenerNotasPorFicha: function(idFicha) {
+            obtenerNotasPorVisita: function(idVisita) {
                 jQuery.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_obtenerNotasPorVisitas.php",
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,
-                    data: {idFicha:idFicha},
+                    data: {idVisita: idVisita},
                     success: function(datos) {
-                        notas.callbacks.cargarNotasPorFicha(datos);
+                        notas.callbacks.cargarNotasPorVisita(datos);
                     },
                     error: function() {
 
@@ -59,10 +63,10 @@
             }
         },
         callbacks: {
-            cargarNotasPorFicha: function(arrDatos) {
-                $('#tablaNotasPorFicha').dataTable().fnClearTable();
+            cargarNotasPorVisita: function(arrDatos) {
+                $('#tablaNotasPorVisita').dataTable().fnClearTable();
                 for (i = 0; i < arrDatos.length; i++) {
-                    $('#tablaNotasPorFicha').dataTable().fnAddData([
+                    $('#tablaNotasPorVisita').dataTable().fnAddData([
                         arrDatos[i].fechaRegistro + "",
                         arrDatos[i].descripcion + ""
                     ]);

@@ -54,11 +54,10 @@ function obtenerClientePorRun($run) {
     return $db->loadObject();
 }
 
-function actualizarCliente($nombres, $apellidos, $run, $correo, $calle, $poblacion, $depto, $numeroDomicilio, $telefonoCelular, $telefonoFijo, $idComuna, $idCliente) {
+function actualizarCliente($nombres, $apellidos, $run, $correo, $calle, $poblacion, $depto, $numeroDomicilio, $telefonoCelular, $telefonoFijo, $idComuna) {
     $sql = "UPDATE cliente SET 
             nombres = '{$nombres}',
             apellidos = '{$apellidos}',
-            run = '{$run}',
             correo = '{$correo}',
             calle = '{$calle}',
             poblacion = '{$poblacion}',
@@ -67,7 +66,7 @@ function actualizarCliente($nombres, $apellidos, $run, $correo, $calle, $poblaci
             telefonoCelular = '{$telefonoCelular}',
             telefonoFijo = '{$telefonoFijo}',
             idComuna = {$idComuna}
-            WHERE idCliente = {$idCliente};";
+            WHERE run = {$run};";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     $db->alter();

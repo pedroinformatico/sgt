@@ -790,7 +790,7 @@ border: 1px solid #CADCFF; }
 .paging_full_numbers span.paginate_button, .paging_full_numbers span.paginate_active { border: 1px solid #aaa; padding: 2px 5px; margin: 0 3px; cursor: pointer; }
 .paging_full_numbers span.paginate_button { background-color: #ddd; }
 .paging_full_numbers span.paginate_button:hover { background-color: #ccc; }
-.paging_full_numbers span.paginate_active { background-color: #99B3FF; }
+.paging_full_numbers span.paginate_active { background-color: #99B3FF; text-indent: 100%;     white-space: nowrap;     overflow: hidden; }
 table.display tr.even.row_selected td { background-color: #B0BED9; }
 table.display tr.odd.row_selected td { background-color: #9FAFD1; }
 /*
@@ -851,6 +851,9 @@ table.display tr.gradeA { background-color: #FFFFFF; }
 table.display tr.gradeC { background-color: #ddddff; }
 table.display tr.gradeX { background-color: #ffdddd; }
 table.display tr.gradeU { background-color: #ddd; }
+.paginate_disabled_next, .paginate_disabled_previous, .paginate_enabled_next, .paginate_enabled_previous  {
+    text-indent: 100%;     white-space: nowrap;     overflow: hidden;
+}
 
 
 /**============================== TableTools styles ====================================**/

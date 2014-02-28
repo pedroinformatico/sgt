@@ -44,7 +44,7 @@
                     cache: false,
                     data: {idAuto:idAuto},
                     success: function(datos) {
-                        visitas.callbacks.cargarFichasPorAuto(datos);
+                        visitas.callbacks.cargarVisitasPorAuto(datos);
                     },
                     error: function() {
 
@@ -61,14 +61,14 @@
                 }
                 visitas.actions.obtenerVisitasPorAuto(arrDatos[0].idAuto);
             },
-            cargarFichasPorAuto: function(arrDatos) {
+            cargarVisitasPorAuto: function(arrDatos) {
                 $('#tablaHistorialAutos').dataTable().fnClearTable();
                 for (i = 0; i < arrDatos.length; i++) {
                     $('#tablaHistorialAutos').dataTable().fnAddData([
                         arrDatos[i].fechaIngreso + "",
                         arrDatos[i].kilometraje + "",
                         arrDatos[i].descripcion + "",  
-                        '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idFicha + '\'); " value="Editar">'
+                        '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idVisita + '\'); " value="Editar">'
                     ]);
                 }
             }

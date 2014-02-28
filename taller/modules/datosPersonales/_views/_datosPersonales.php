@@ -12,7 +12,7 @@
         <tr>
             <td><input type="text" class="datosClientes" id="nombreClienteActual" /></td>
             <td><input type="text" class="datosClientes" id="apellidoClienteActual"/></td>
-            <td><input type="text" class="datosClientes" id="runClienteActual"/></td>
+            <td><input type="text" readonly id="runClienteActual"/></td>
             <td><input type="text" class="datosClientes" id="correoClienteActual"/></td>
         </tr>
         <tr>
@@ -40,7 +40,8 @@
             <td> <select class="selectDatosClientes" id="comunaClienteActual"><option>-- Seleccione --</option></select></td>
         </tr>
         <tr >
-            <td colspan="4" ><input  type="submit" class="button2" id="editarCliente" value="Editar cliente"><input  type="submit" class="button2" id="guardarEdicionCliente" value="Guardar"></td>
+            <td><input  type="submit" class="button2" id="editarCliente" value="Editar cliente"><input  type="submit" class="button2" id="guardarEdicionCliente" value="Guardar"></td>
+            <td colspan="3" ><span id="errorClienteActual" style="color: red"></span></td> 
         </tr>
     </table>
 

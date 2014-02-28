@@ -1,7 +1,7 @@
 <!-- Pane 1 -->
 <div id="visitasVehiculo">
     <fieldset>
-        Notas de la Ficha 
+        Visitas del Vehiculo 
         <select  id="patentes" >
             <option value="0">Seleccione Vehículo</option>
         </select> 

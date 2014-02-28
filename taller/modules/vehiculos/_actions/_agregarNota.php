@@ -8,10 +8,10 @@ require_once $_SESSION['__BASESERVER__'] . '/modules/gestionDeFichas/_actions/_f
 
 
 $descripcion = isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
-$idFicha = isset($_REQUEST["idFicha"]) ? $_REQUEST["idFicha"] : "";
+$idVisita = isset($_REQUEST["idVisita"]) ? $_REQUEST["idVisita"] : "";
 
 
 $idNota = insertarNota($descripcion,'NULL');
-relacionarVisitaConNota($idFicha, $idNota);
+relacionarVisitaConNota($idVisita, $idNota);
 
 ?>

@@ -168,27 +168,38 @@ helper = {
     validarString: function(str) {
         return str !== "";
     },
-    validarCampos: function(data,errorID) {
-        for (i = 0; i < data.length; i++) {
+    validarRut: function(id) {
+        $("#" + id).val($.Rut.formatear($("#" + id).val(),true));
+        return $.Rut.validar($("#" + id).val());
+    },
+    validarCampos: function(data, errorID) {
+        for (var i = 0; i < data.length; i++) {
             switch (data[i].type) {
                 case "int":
-                    if (!this.validarEntero($("#"+data[i].id).val())) {
-                        $("#"+data[i].id).focus();
-                        $("#"+errorID).html(data[i].msg);
+                    if (!this.validarEntero($("#" + data[i].id).val())) {
+                        $("#" + data[i].id).focus();
+                        $("#" + errorID).html(data[i].msg);
                         return false;
                     }
                     break;
                 case "mail":
-                    if (!this.validarMail($("#"+data[i].id).val())) {
-                        $("#"+data[i].id).focus();
-                        $("#"+errorID).html(data[i].msg);
+                    if (!this.validarMail($("#" + data[i].id).val())) {
+                        $("#" + data[i].id).focus();
+                        $("#" + errorID).html(data[i].msg);
                         return false;
                     }
                     break;
                 case "str":
-                    if (!this.validarString($("#"+data[i].id).val())) {
-                        $("#"+data[i].id).focus();
-                        $("#"+errorID).html(data[i].msg);
+                    if (!this.validarString($("#" + data[i].id).val())) {
+                        $("#" + data[i].id).focus();
+                        $("#" + errorID).html(data[i].msg);
+                        return false;
+                    }
+                    break;
+                case "rut":
+                    if (!this.validarRut(data[i].id)) {
+                        $("#" + data[i].id).focus();
+                        $("#" + errorID).html(data[i].msg);
                         return false;
                     }
                     break;
