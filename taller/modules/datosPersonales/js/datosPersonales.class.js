@@ -37,10 +37,11 @@
             }
         },
         actions: {
-            
         },
         callbacks: {
             setCliente: function(data) {
+                $("#contenedorDatosCliente").hide();
+                
                 $("#nombreClienteActual").val(data.nombres);
                 $("#apellidoClienteActual").val(data.apellidos);
                 $("#runClienteActual").val(data.run);
@@ -51,8 +52,10 @@
                 $("#deptoClienteActual").val(data.depto);
                 $("#celularClienteActual").val(data.telefonoCelular);
                 $("#fijoClienteActual").val(data.telefonoFijo);
-                //$("#nuevaRegion").val();
-                //$("#nuevaComuna").val('');
+                
+                $("#nombreFicha").html(data.nombres + " " + data.apellidos);
+                
+                $("#contenedorDatosCliente").slideDown("fast");
             }
         }
     };

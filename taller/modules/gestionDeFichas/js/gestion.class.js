@@ -16,6 +16,7 @@
         },
         ui: {
             init: function() {
+                $("#contenedorDatosCliente").hide();
                 $("ul.vertical_nav").tabs("div.panes_vertical > div", {effect: 'fade'});
                 gestion.vars.verticalTabs = $("ul.vertical_nav").data("tabs");
                 gestion.vars.verticalTabs.onClick(function(e) {

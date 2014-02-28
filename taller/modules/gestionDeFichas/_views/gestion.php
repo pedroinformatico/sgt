@@ -46,10 +46,11 @@
                     </div>
                 </div>
 
-                <div class="small_box clear">
+                <div class="small_box clear" id="contenedorDatosCliente">
                     <div class="header">
                         <img src="../base/images/tables_icon.png" alt="Accordion" width="30" height="30" /> 
-                        Ficha cliente -- <span id="subModuleName"> Vehiculos </span>
+                        Ficha cliente <span id="nombreFicha" style="color: #1F00FF;text-transform: uppercase;font-weight: bold;"></span> 
+                        -- <span id="subModuleName"> Vehiculos </span>
                     </div>
                     <div class="body_vertical_nav clearfix">
                         <!-- Grey backgound applied to box body -->
