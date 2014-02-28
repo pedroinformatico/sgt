@@ -2,11 +2,13 @@ DROP DATABASE negocio;
 
 CREATE DATABASE negocio;
 
+USE negocio;
+
 CREATE TABLE `negocio`.`cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
-  `nombres` VARCHAR(60) NULL,
+  `nombres` VARCHAR(60) NOT NULL,
   `apellidos` VARCHAR(60) NULL,
-  `run` VARCHAR(45) NULL,
+  `run` VARCHAR(45) NOT NULL UNIQUE,
   `correo` VARCHAR(45) NULL,
   `calle` VARCHAR(100) NULL,
   `poblacion` VARCHAR(50) NULL,
