@@ -9,9 +9,9 @@ require_once $_SESSION['__BASESERVER__'].'/base/_config/SessionValues.php';
 
 //validate("resumen");
 
-function obtenerFichasPorIdAuto($idAuto){
+function obtenerVisitasPorIdAuto($idAuto){
     $sql = "SELECT
-            f.idFicha,
+            f.idVisita,
             f.idCliente,
             f.idAuto,
             f.kilometraje,
@@ -25,7 +25,7 @@ function obtenerFichasPorIdAuto($idAuto){
 }
 
 
-function insertFicha($idCliente,$idAuto,$kilometraje, $fechaIngreso, $descripcion){
+function insertarVisita($idCliente,$idAuto,$kilometraje, $fechaIngreso, $descripcion){
     $sql = "INSERT INTO ficha (idCliente,idAuto,kilometraje,fechaRegistro,  fechaIngreso, descripcion)
             VALUES ({$idCliente},{$idAuto},{$kilometraje}, curdate(), '{$fechaIngreso}','{$descripcion}');";
     error_log($sql);        
@@ -42,7 +42,7 @@ function insertarNota($descripcion,$fechaNota){
     return $db->insert(); //Retorna id del insert
 }
 
-function relacionarFichaConNota($idFicha,$idNota){
+function relacionarVisitaConNota($idFicha,$idNota){
     $sql = "INSERT INTO ficha_nota (idFicha, idNota) VALUES ({$idFicha},{$idNota})";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
@@ -61,11 +61,11 @@ function actualizarNota($descripcion,$fechaNota, $idNota){
     $db->alter();
 }
 
-function obtenerNotasPorFicha($idFicha){
+function obtenerNotasPorVisita($idVisita){
     $sql = "SELECT n.descripcion, n.fechaRegistro, n.idNota FROM 
             ficha_nota AS fn
             INNER JOIN nota AS n ON n.idNota = fn.idNota
-            WHERE fn.idFicha = {$idFicha}";
+            WHERE fn.idVisita = {$idVisita}";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObjectList();

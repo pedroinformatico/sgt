@@ -12,6 +12,6 @@ $idFicha = isset($_REQUEST["idFicha"]) ? $_REQUEST["idFicha"] : "";
 
 
 $idNota = insertarNota($descripcion,'NULL');
-relacionarFichaConNota($idFicha, $idNota);
+relacionarVisitaConNota($idFicha, $idNota);
 
 ?>

@@ -14,6 +14,6 @@ $runCliente = isset($_REQUEST["runCliente"]) ? $_REQUEST["runCliente"] : "";
 
 
 $cliente =  obtenerClientePorRun($runCliente);
-$idFicha = insertFicha($cliente->idCliente, $idAuto, $kilometraje, $fechaIngreso, $descripcion);
+$idFicha = insertarVisita($cliente->idCliente, $idAuto, $kilometraje, $fechaIngreso, $descripcion);
 
 ?>

@@ -44,7 +44,7 @@
             obtenerNotasPorFicha: function(idFicha) {
                 jQuery.ajax({
                     type: 'GET',
-                    url: "vehiculos/_actions/_obtenerNotasPorFicha.php",
+                    url: "vehiculos/_actions/_obtenerNotasPorVisitas.php",
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,

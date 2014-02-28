@@ -38,7 +38,7 @@
             obtenerVisitasPorAuto: function(idAuto) {
                 jQuery.ajax({
                     type: 'GET',
-                    url: "vehiculos/_actions/_obtenerFichasPorAuto.php",
+                    url: "vehiculos/_actions/_obtenerVisitasPorAuto.php",
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,

@@ -6,7 +6,7 @@ if (!isset($_SESSION)) {
 require_once $_SESSION['__BASESERVER__'] . '/modules/gestionDeFichas/_actions/_functions.php';
 
 $idAuto = isset($_REQUEST["idAuto"]) ? $_REQUEST["idAuto"] : "";
-echo json_encode(obtenerFichasPorIdAuto($idAuto));
+echo json_encode(obtenerVisitasPorIdAuto($idAuto));
 
 ?>
 
