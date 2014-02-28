@@ -11,6 +11,7 @@
 (function(window) {
     var vehiculos = {
         vars: {
+            idFichaSeleccionada:0
         },
         ui: {
             init: function() {
@@ -32,7 +33,7 @@
                 $("#dialogNuevaVisita").dialog({
                     autoOpen: false,
                     resizable: false,
-                    width: 330,
+                    width: 500,
                     modal: true,
                     buttons: {
                         Cancelar: function() {
@@ -66,13 +67,16 @@
                 });
                 $("#nuevoVehiculo").on("click", function() {
                     $("#dialogNuevoVehiculo").dialog("open");
+                    
                 });
             }
         },
         actions: {
             openEditNotes: function(id) {
                 $("#notasVehiculo").dialog("open");
-            }
+                vehiculos.vars.idFichaSeleccionada = id;
+                notas.actions.obtenerNotasPorFicha(id);
+            } 
         },
         callbacks: {
         }

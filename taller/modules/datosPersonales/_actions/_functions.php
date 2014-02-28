@@ -13,7 +13,7 @@ function obtenerClientesSegunParametros($nombre, $apellidos, $run, $patente) {
     $apellidos = $apellidos == "" ? "NULL" : "'".$apellidos."'";
     $run = $run == "" ? "NULL" : "'".$run."'";
 
-    $sql = "SELECT 
+    $sql = "SELECT DISTINCT
             UPPER(c.nombres) AS nombre, 
             UPPER(c.apellidos) AS apellido,
             c.run,

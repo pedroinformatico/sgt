@@ -87,6 +87,7 @@
                     success: function(data) {
                         if(data!==null){
                             datosPersonales.callbacks.setCliente(data);
+                            visitas.actions.obtenerPatentes(run);
                         }
                     },
                     error: function() {
@@ -107,7 +108,7 @@
                         arrDatos[i].run + "",
                         arrDatos[i].nombre + "",
                         arrDatos[i].apellido + "",
-                        '<input  type="submit" class="button" onclick="resultadoBusqueda.actions.verDetalleCliente(\'' + arrDatos[i].run + '\')" value="Seleccionar">'
+                        '<input  type="submit" class="button" onclick="resultadoBusqueda.actions.verDetalleCliente(\'' + arrDatos[i].run + '\'); " value="Seleccionar">'
                     ]);
                 }
                 $("#dialogResultadoBusqueda").dialog("open");
