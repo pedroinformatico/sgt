@@ -19,6 +19,7 @@ function obtenerVisitasPorIdAuto($idAuto){
             f.fechaIngreso,
             f.fechaRegistro
             FROM visita AS f  WHERE  f.idAuto = {$idAuto}";
+    error_log($sql);
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObjectList();

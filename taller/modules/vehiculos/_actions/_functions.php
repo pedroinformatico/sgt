@@ -17,9 +17,10 @@ function relacionarClienteAuto($idAuto, $idCliente){
 }
 
 function obtenerPatentesPorCliente($idCliente){
-    $sql = "SELECT a.marca, a.modelo, a.patente, a.idAuto 
+    $sql = "SELECT pm.nombre as marca, a.modelo, a.patente, a.idAuto 
             FROM cliente_auto AS ca 
             INNER JOIN auto AS a ON a.idAuto = ca.idAuto
+            INNER JOIN par_marca AS pm ON a.marca = pm.idMarca
             WHERE ca.idCliente = {$idCliente};";
     $db = MySQL::getInstance();
     $db->setQuery($sql);

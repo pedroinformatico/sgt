@@ -42,7 +42,12 @@
             },
             setEvents: function() {
                 $("#nuevoCliente").on("click", function() {
+                    nuevoCliente.actions.obtenerRegiones();
+                    helper.cleanForm(["nuevoNombre","nuevoApellido","nuevoRun"]);
                     $("#dialogNuevoCliente").dialog("open");
+                    
+                    //
+                    
                 });
             }
         },

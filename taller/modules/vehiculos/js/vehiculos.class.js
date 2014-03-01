@@ -63,9 +63,12 @@
             },
             setEvents: function() {
                 $("#nuevaVisita").on("click", function() {
+                    helper.cleanForm(["nuevoVisitaKilometraje","nuevoVisitaFechaIngreso","nuevoVisitaDescripcion"]);
                     $("#dialogNuevaVisita").dialog("open");
                 });
                 $("#nuevoVehiculo").on("click", function() {
+                    helper.cleanForm(["nvModelo","nvPatente","nvAnio","nvKilometraje","nvVIN"]);
+                    $('#nvMarca').prop('selectedIndex',0);
                     $("#dialogNuevoVehiculo").dialog("open");
                     
                 });
@@ -74,6 +77,7 @@
         actions: {
             openEditNotes: function(id) {
                 $("#notasVehiculo").dialog("open");
+                helper.cleanForm(["nuevaNota"]);
                 vehiculos.vars.idVisitaSeleccionada = id;
                 notas.actions.obtenerNotasPorVisita(id);
             } 

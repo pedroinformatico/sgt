@@ -9,9 +9,9 @@ require_once $_SESSION['__BASESERVER__'] . '/base/lib/MySQL.php';
 require_once $_SESSION['__BASESERVER__'] . '/base/_config/SessionValues.php';
 
 function obtenerClientesSegunParametros($nombre, $apellidos, $run, $patente) {
-    $nombre = $nombre == "" ? "NULL" : "'".$nombre."'";
-    $apellidos = $apellidos == "" ? "NULL" : "'".$apellidos."'";
-    $run = $run == "" ? "NULL" : "'".$run."'";
+    $nombre = $nombre == "" ? "NULL" : "'%".$nombre."%'";
+    $apellidos = $apellidos == "" ? "NULL" : "'%".$apellidos."%'";
+    $run = $run == "" ? "NULL" : "'%".$run."%'";
 
     $sql = "SELECT DISTINCT
             UPPER(c.nombres) AS nombre, 
@@ -66,14 +66,23 @@ function actualizarCliente($nombres, $apellidos, $run, $correo, $calle, $poblaci
             telefonoCelular = '{$telefonoCelular}',
             telefonoFijo = '{$telefonoFijo}',
             idComuna = {$idComuna}
-            WHERE run = {$run};";
+            WHERE run = '{$run}';";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     $db->alter();
 }
 
-function obtenerProvincias($idRegion) {
+function obtenerComunas($idRegion) {
     $sql = "SELECT idComuna, idRegion, nombre FROM par_comuna WHERE idRegion = {$idRegion}";
+    $db = MySQL::getInstance();
+    $db->setQuery($sql);
+    return $db->loadObjectList();
+}
+
+function obtenerRegiones(){
+    $sql = "SELECT 
+            idRegion, nombre
+            FROM par_region";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObjectList();

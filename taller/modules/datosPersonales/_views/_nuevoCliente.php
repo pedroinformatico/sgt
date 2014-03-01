@@ -11,7 +11,7 @@
             <td><input type="text" id="nuevoNombre"/></td>
             <td><input type="text" id="nuevoApellido"/></td>
             <td><input type="text" id="nuevoRun"/></td>
-            <td><input type="text" id="nuevoCorreo" value="msf@sad.asd"/></td>
+            <td><input type="text" id="nuevoCorreo"/></td>
         </tr>
         <tr>
             <td>Calle</td>

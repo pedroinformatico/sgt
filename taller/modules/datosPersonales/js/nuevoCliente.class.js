@@ -77,10 +77,57 @@
                     complete: function(data) {
                     }
                 });
+            },
+            obtenerRegiones: function() {
+                $.ajax({
+                    type: 'GET',
+                    url: "datosPersonales/_actions/_obtenerRegiones.php",
+                    contentType: 'json',
+                    dataType: 'json',
+                    cache: false,
+                    success: function(datos) {
+                        nuevoCliente.callbacks.cargarRegiones(datos)
+                    },
+                    error: function() {
+                        alert("error al guardar los datos");
+                    },
+                    complete: function(data) {
+                    }
+                });  
+            },
+            obtenerComunas: function(idRegion) {
+                $.ajax({
+                    type: 'GET',
+                    url: "datosPersonales/_actions/_obtenerComunas.php",
+                    contentType: 'json',
+                    dataType: 'json',
+                    cache: false,
+                    data: {idRegion: idRegion},
+                    success: function(datos) {
+                        nuevoCliente.callbacks.cargarComunas(datos);
+                    },
+                    error: function() {
+                        alert("error al guardar los datos");
+                    },
+                    complete: function(data) {
+                    } 
+                });  
             }
-        },
+        },  
         callbacks: {
-           
+           cargarRegiones: function(arrDatos) {
+                $('#nuevaRegion option').remove();
+                for(i = 0; i<arrDatos.length; i++){  
+                    $("#nuevaRegion").append('<option onclick="nuevoCliente.actions.obtenerComunas('+arrDatos[i].idRegion+')" value='+arrDatos[i].idRegion+'>'+arrDatos[i].nombre + '</option>');
+                }
+                nuevoCliente.actions.obtenerComunas(arrDatos[0].idRegion);
+            },
+            cargarComunas: function(arrDatos) {
+                $('#nuevaComuna option').remove();
+                for(i = 0; i<arrDatos.length; i++){  
+                    $("#nuevaComuna").append('<option onclick="" value="+arrDatos[i].idComuna+">'+arrDatos[i].nombre + '</option>');
+                }
+            }
         }
     };
     nuevoCliente.ui.init();

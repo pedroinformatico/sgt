@@ -220,7 +220,7 @@ helper = {
     },
     cleanForm: function(array) {
         for (i = 0; i < array.length; i++) {
-            $('#' + array[i]).html("");
+            $('#' + array[i]).val("");
         }
     }
 };
