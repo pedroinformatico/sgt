@@ -92,7 +92,9 @@
                 $("#fijoClienteActual").val(data.telefonoFijo);
 
                 $("#nombreFicha").html(data.nombres + " " + data.apellidos);
-
+                $("#nuevaRegion").val(data.idRegion);
+                nuevoCliente.actions.obtenerComunas(data.idRegion,'nuevaComuna');
+                $("#nuevaComuna").val(data.idComuna);
                 $("#contenedorDatosCliente").slideDown("fast");
             }
         }

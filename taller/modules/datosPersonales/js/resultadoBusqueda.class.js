@@ -86,7 +86,9 @@
                     cache: false,
                     success: function(data) {
                         if(data!==null){
+                            nuevoCliente.actions.obtenerRegiones('regionClienteActual','comunaClienteActual');
                             datosPersonales.callbacks.setCliente(data);
+                            
                             visitas.actions.obtenerPatentes(run);
                         }
                     },
@@ -101,7 +103,6 @@
         },
         callbacks: {
             addRowsResultados: function(arrDatos) {
-
                 $('#tablaResultadoBusqueda').dataTable().fnClearTable();
                 for (i = 0; i < arrDatos.length; i++) {
                     $('#tablaResultadoBusqueda').dataTable().fnAddData([

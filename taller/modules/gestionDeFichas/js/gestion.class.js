@@ -42,7 +42,7 @@
             },
             setEvents: function() {
                 $("#nuevoCliente").on("click", function() {
-                    nuevoCliente.actions.obtenerRegiones();
+                    nuevoCliente.actions.obtenerRegiones('nuevaRegion', 'nuevaComuna');
                     helper.cleanForm(["nuevoNombre","nuevoApellido","nuevoRun"]);
                     $("#dialogNuevoCliente").dialog("open");
                     

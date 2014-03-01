@@ -45,10 +45,13 @@ function obtenerCliente($idCliente) {
 }
 
 function obtenerClientePorRun($run) {
-    $sql = "SELECT 
-            idCliente,nombres,apellidos,run,correo,calle,poblacion,depto,numeroDomicilio,telefonoCelular,telefonoFijo,idComuna
-            FROM cliente
-            WHERE run = '{$run}';";
+    $sql = "SELECT      
+            c.idCliente,c.nombres,c.apellidos,c.run,c.correo,
+            c.calle,c.poblacion,c.depto,c.numeroDomicilio,
+            c.telefonoCelular,c.telefonoFijo,c.idComuna, pc.idRegion
+            FROM cliente AS c
+            INNER JOIN par_comuna AS pc ON pc.idComuna = c.idComuna 
+            WHERE c.run = '{$run}';";
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObject();

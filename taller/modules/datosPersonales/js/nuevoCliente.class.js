@@ -36,7 +36,7 @@
                             depto: $("#nuevoOtro").val(),
                             telefonoCelular: $("#nuevoCelular").val(),
                             telefonoFijo: $("#nuevoTelefono").val(),
-                            idComuna: 5
+                            idComuna: $("#nuevaComuna").val()
                         }
                         nuevoCliente.actions.guardarCliente(function() {
                             $("#nuevoRun").val('');
@@ -77,8 +77,8 @@
                     complete: function(data) {
                     }
                 });
-            },
-            obtenerRegiones: function() {
+            }, 
+            obtenerRegiones: function(idSelect, idSelectComuna) {
                 $.ajax({
                     type: 'GET',
                     url: "datosPersonales/_actions/_obtenerRegiones.php",
@@ -86,7 +86,7 @@
                     dataType: 'json',
                     cache: false,
                     success: function(datos) {
-                        nuevoCliente.callbacks.cargarRegiones(datos)
+                        nuevoCliente.callbacks.cargarRegiones(datos,idSelect,idSelectComuna);
                     },
                     error: function() {
                         alert("error al guardar los datos");
@@ -95,7 +95,7 @@
                     }
                 });  
             },
-            obtenerComunas: function(idRegion) {
+            obtenerComunas: function(idRegion, idSelect) {
                 $.ajax({
                     type: 'GET',
                     url: "datosPersonales/_actions/_obtenerComunas.php",
@@ -104,7 +104,8 @@
                     cache: false,
                     data: {idRegion: idRegion},
                     success: function(datos) {
-                        nuevoCliente.callbacks.cargarComunas(datos);
+                        nuevoCliente.callbacks.cargarComunas(datos,idSelect);
+                        
                     },
                     error: function() {
                         alert("error al guardar los datos");
@@ -115,17 +116,17 @@
             }
         },  
         callbacks: {
-           cargarRegiones: function(arrDatos) {
-                $('#nuevaRegion option').remove();
+           cargarRegiones: function(arrDatos, idSelect, idSelectComuna) {
+                $('#'+idSelect+' option').remove();
                 for(i = 0; i<arrDatos.length; i++){  
-                    $("#nuevaRegion").append('<option onclick="nuevoCliente.actions.obtenerComunas('+arrDatos[i].idRegion+')" value='+arrDatos[i].idRegion+'>'+arrDatos[i].nombre + '</option>');
+                    $('#'+idSelect).append('<option onclick="nuevoCliente.actions.obtenerComunas('+arrDatos[i].idRegion+',\''+idSelectComuna+'\')" value='+arrDatos[i].idRegion+'>'+arrDatos[i].nombre + '</option>');
                 }
-                nuevoCliente.actions.obtenerComunas(arrDatos[0].idRegion);
+                nuevoCliente.actions.obtenerComunas(arrDatos[0].idRegion,idSelectComuna);
             },
-            cargarComunas: function(arrDatos) {
-                $('#nuevaComuna option').remove();
+            cargarComunas: function(arrDatos, idSelect) {
+                $('#'+idSelect+' option').remove();
                 for(i = 0; i<arrDatos.length; i++){  
-                    $("#nuevaComuna").append('<option onclick="" value="+arrDatos[i].idComuna+">'+arrDatos[i].nombre + '</option>');
+                    $('#'+idSelect).append('<option onclick="" value="'+arrDatos[i].idComuna+'">'+arrDatos[i].nombre + '</option>');
                 }
             }
         }
