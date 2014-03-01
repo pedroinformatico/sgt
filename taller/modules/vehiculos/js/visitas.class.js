@@ -15,7 +15,10 @@
             init: function() {
             },
             setEvents: function() {        
-                
+                $("#guardarNuevaVisita").on('change', function(e) {    
+                    //$('#tablaHistorialAutos').dataTable().fnClearTable();
+                    visitas.actions.obtenerVisitasPorAuto($("#patentes").val());
+                });
             }
         },
         actions: {
