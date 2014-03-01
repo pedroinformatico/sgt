@@ -4,7 +4,7 @@ CREATE DATABASE negocio;
 
 USE negocio;
 
-CREATE TABLE `negocio`.`cliente` (
+CREATE TABLE `cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nombres` VARCHAR(60) NOT NULL,
   `apellidos` VARCHAR(60) NULL,
@@ -21,18 +21,18 @@ CREATE TABLE `negocio`.`cliente` (
   PRIMARY KEY (`idCliente`))
 COMMENT = 'Tabla que contiene datos personales de un cliente';
 
-CREATE TABLE `negocio`.`par_region` (
+CREATE TABLE `par_region` (
   `idRegion` INT NOT NULL,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`idRegion`));
 
-CREATE TABLE `negocio`.`par_comuna` (
+CREATE TABLE `par_comuna` (
   `idComuna` INT NOT NULL AUTO_INCREMENT,
   `idRegion` INT NOT NULL, 
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`idComuna`));
   
-  CREATE TABLE `negocio`.`auto` (
+  CREATE TABLE `auto` (
   `idAuto` INT NOT NULL AUTO_INCREMENT,
   `marca` INT NULL,
   `modelo` VARCHAR(45) NULL,
@@ -43,14 +43,14 @@ CREATE TABLE `negocio`.`par_comuna` (
   PRIMARY KEY (`idAuto`))
 COMMENT = 'Tabla que contiene los vehiculos asociados a un cliente';
 
-CREATE TABLE `negocio`.`par_marca` (
+CREATE TABLE `par_marca` (
   `idMarca` INT NOT NULL AUTO_INCREMENT,
   `nombre` VARCHAR(45) NULL,
   PRIMARY KEY (`idMarca`));
   
   
   
-  CREATE TABLE `negocio`.`cliente_auto` (
+  CREATE TABLE `cliente_auto` (
   `idClienteAuto` INT NOT NULL AUTO_INCREMENT,
   `idAuto` INT NULL,
   `idCliente` INT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `negocio`.`par_marca` (
 COMMENT = 'Tabla que relaciona los clientes con sus autos, un cliente puede tener m·s de un auto';
 
 
-CREATE TABLE `negocio`.`nota` (
+CREATE TABLE `nota` (
   `idNota` INT NOT NULL AUTO_INCREMENT,
   `descripcion` VARCHAR(200) NULL,
   `fechaNota` DATE NULL,
@@ -66,7 +66,7 @@ CREATE TABLE `negocio`.`nota` (
   PRIMARY KEY (`idNota`))
 COMMENT = 'Tabla que contiene las notas o comentarios agregados en una ficha para registrar los cambios que se han realizado a un vehÌculo';
 
-CREATE TABLE `negocio`.`visita` (
+CREATE TABLE `visita` (
   `idVisita` INT NOT NULL AUTO_INCREMENT,
   `idCliente` INT NOT NULL,
   `idAuto` INT NOT NULL,
@@ -78,14 +78,14 @@ CREATE TABLE `negocio`.`visita` (
 COMMENT = 'La tabla ficha guarda el id de cliente y e id del auto del cual est· relacionado, una ficha debe tener un ˙nico cliente y vehÌculo';
 
 
-CREATE TABLE `negocio`.`visita_nota` (
+CREATE TABLE `visita_nota` (
   `idVisitaNota` INT NOT NULL AUTO_INCREMENT,
   `idVisita` INT NULL,
   `idNota` INT NULL,
   PRIMARY KEY (`idVisitaNota`))
 COMMENT = 'relaciona las notas asociadas a una ficha, una ficha tener 0, o m·s notas.';
 
-use negocio;
+
 
 insert into par_marca (nombre) values ('Abarth');
 insert into par_marca (nombre) values ('Alfa Romeo');
