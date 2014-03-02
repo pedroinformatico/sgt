@@ -59,6 +59,7 @@
         },
         callbacks: {
             cargarPatentes: function(arrDatos) {
+                $('#tablaHistorialAutos').dataTable().fnClearTable();
                 $('#patentes option').remove();
                 if (arrDatos.length > 0) {
                     for (i = 0; i < arrDatos.length; i++) {

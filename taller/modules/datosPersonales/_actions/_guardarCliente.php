@@ -13,7 +13,7 @@ $calle = isset($_REQUEST["calle"]) ? $_REQUEST["calle"] : "";
 $poblacion = isset($_REQUEST["poblacion"]) ? $_REQUEST["poblacion"] : "";
 $numeroDomicilio = isset($_REQUEST["numeroDomicilio"]) ? $_REQUEST["numeroDomicilio"] : "";
 $depto = isset($_REQUEST["depto"]) ? $_REQUEST["depto"] : "";
-$telefonoCelular = isset($_REQUEST["celular"]) ? $_REQUEST["celular"] : "";
+$telefonoCelular = isset($_REQUEST["telefonoCelular"]) ? $_REQUEST["telefonoCelular"] : "";
 $telefonoFijo = isset($_REQUEST["telefonoFijo"]) ? $_REQUEST["telefonoFijo"] : "";
 $idComuna = isset($_REQUEST["idComuna"]) ? $_REQUEST["idComuna"] : "";
 
