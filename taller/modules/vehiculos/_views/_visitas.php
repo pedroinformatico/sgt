@@ -9,7 +9,7 @@
     </fieldset>
     <br/>
     <fieldset>
-        <legend>Historial de visitas para <span id="pantenteSeleccionada">xx-xx-nn</span></legend>
+        <legend>Historial de visitas</legend>
         <table id="tablaHistorialAutos" border="0" cellpadding="0" cellspacing="0" class="grid_table wf">
             <thead>
                 <tr>

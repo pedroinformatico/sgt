@@ -36,7 +36,6 @@
                     cache: false,
                     data: {runCliente:runCliente, kilometraje:kilometraje, fechaIngreso:fechaIngreso, descripcion:descripcion, idAuto:idAuto},
                     success: function() {
-                        alert("Se creó una nueva visita para la patente seleccionada");
                         $("#dialogNuevaVisita").dialog("close");
                         visitas.actions.obtenerVisitasPorAuto($("#patentes").val());
                     },

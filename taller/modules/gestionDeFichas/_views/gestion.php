@@ -69,11 +69,11 @@
                 </div>
 
             </div>
-        </div>
-        <!--End Template Content bacground-->
         <? include './datosPersonales/_views/_nuevoCliente.php'; ?>
         <? include './datosPersonales/_views/_resultadoBusqueda.php'; ?>
         <? include '../base/footer.php'; ?>
+        </div>
+        <!--End Template Content bacground-->
         <script type="text/javascript" src="./gestionDeFichas/js/gestion.class.js"></script> <!--Import jquery library and jquery tools from a single file-->
     </body>
     <!--End Body-->

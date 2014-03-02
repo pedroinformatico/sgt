@@ -40,6 +40,10 @@
                 });
             },
             setEvents: function() {
+                $("#runBusqueda").blur(function() {
+                    $("#runBusqueda").val($.Rut.formatear($("#runBusqueda").val(), true));
+                });
+
                 $("#buscar").on("click", function() {
                     var data = {
                         nombre: $("#nombreBusqueda").val(),
@@ -85,10 +89,8 @@
                     data: {run: run},
                     cache: false,
                     success: function(data) {
-                        if(data!==null){
-                            nuevoCliente.actions.obtenerRegiones('regionClienteActual','comunaClienteActual');
+                        if (data !== null) {
                             datosPersonales.callbacks.setCliente(data);
-                            
                             visitas.actions.obtenerPatentes(run);
                         }
                     },

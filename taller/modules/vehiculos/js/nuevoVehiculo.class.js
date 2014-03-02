@@ -38,7 +38,6 @@
                     cache: false,
                     data: {marca: marca,modelo: modelo,patente:patente,anio:anio,kilometraje:kilometraje,vin:vin,runCliente:runCliente},
                     success: function() {
-                        alert("Se asoció el vehículo con éxito al cliente");
                         $("#dialogNuevoVehiculo").dialog("close");
                         visitas.actions.obtenerPatentes($("#runClienteActual").val());
                     },

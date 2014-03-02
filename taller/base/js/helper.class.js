@@ -169,7 +169,7 @@ helper = {
         return str !== "";
     },
     validarRut: function(id) {
-        $("#" + id).val($.Rut.formatear($("#" + id).val(),true));
+        $("#" + id).val($.Rut.formatear($("#" + id).val(), true));
         return $.Rut.validar($("#" + id).val());
     },
     validarCampos: function(data, errorID) {

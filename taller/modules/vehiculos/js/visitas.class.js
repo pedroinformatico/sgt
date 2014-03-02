@@ -13,11 +13,13 @@
     var visitas = {
         ui: {
             init: function() {
+                
+                visitas.ui.setEvents()
             },
-            setEvents: function() {        
-                $("#guardarNuevaVisita").on('change', function(e) {    
-                    //$('#tablaHistorialAutos').dataTable().fnClearTable();
+            setEvents: function() {
+                $("#patentes").change( function(e) {
                     visitas.actions.obtenerVisitasPorAuto($("#patentes").val());
+                    
                 });
             }
         },
@@ -29,7 +31,7 @@
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,
-                    data: {runCliente:runCliente},
+                    data: {runCliente: runCliente},
                     success: function(datos) {
                         visitas.callbacks.cargarPatentes(datos);
                     },
@@ -45,7 +47,7 @@
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,
-                    data: {idAuto:idAuto},
+                    data: {idAuto: idAuto},
                     success: function(datos) {
                         visitas.callbacks.cargarVisitasPorAuto(datos);
                     },
@@ -58,11 +60,13 @@
         callbacks: {
             cargarPatentes: function(arrDatos) {
                 $('#patentes option').remove();
-                for(i = 0; i<arrDatos.length; i++){  
-                    $("#patentes").append('<option onclick="visitas.actions.obtenerVisitasPorAuto('+arrDatos[i].idAuto+')" value='+arrDatos[i].idAuto+'>'+arrDatos[i].patente + ' ' 
-                            +arrDatos[i].marca + ' ' +arrDatos[i].modelo + '</option>');
+                if (arrDatos.length > 0) {
+                    for (i = 0; i < arrDatos.length; i++) {
+                        $("#patentes").append('<option onclick="visitas.actions.obtenerVisitasPorAuto(' + arrDatos[i].idAuto + ')" value=' + arrDatos[i].idAuto + '>' + arrDatos[i].patente + ' '
+                                + arrDatos[i].marca + ' ' + arrDatos[i].modelo + '</option>');
+                    }
+                    visitas.actions.obtenerVisitasPorAuto(arrDatos[0].idAuto);
                 }
-                visitas.actions.obtenerVisitasPorAuto(arrDatos[0].idAuto);
             },
             cargarVisitasPorAuto: function(arrDatos) {
                 $('#tablaHistorialAutos').dataTable().fnClearTable();
@@ -70,7 +74,7 @@
                     $('#tablaHistorialAutos').dataTable().fnAddData([
                         arrDatos[i].fechaIngreso + "",
                         arrDatos[i].kilometraje + "",
-                        arrDatos[i].descripcion + "",  
+                        arrDatos[i].descripcion + "",
                         '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idVisita + '\'); " value="Editar">'
                     ]);
                 }

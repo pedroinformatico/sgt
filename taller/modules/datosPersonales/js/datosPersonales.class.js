@@ -19,9 +19,13 @@
                 datosPersonales.ui.setEvents();
                 $(".datosClientes").attr("readonly", true);
                 $('.selectDatosClientes').prop('disabled', 'disabled');
-                $("#guardarEdicionCliente").hide();
+                $("#guardarEdicionCliente").hide();  
             },
             setEvents: function() {
+                $("#regionClienteActual").change(function() {
+                    gestion.actions.obtenerComunas($("#regionClienteActual").val(), "comunaClienteActual");
+                });
+
                 $("#editarCliente").on("click", function() {
                     $(".datosClientes").attr("readonly", false);
                     $('.selectDatosClientes').prop('disabled', false);
@@ -45,7 +49,7 @@
                             depto: $("#deptoClienteActual").val(),
                             telefonoCelular: $("#celularClienteActual").val(),
                             telefonoFijo: $("#fijoClienteActual").val(),
-                            idComuna: 5
+                            idComuna: $("#comunaClienteActual").val()
                         }
                         datosPersonales.actions.guardarModificaciones(datos);
                     }
@@ -66,7 +70,7 @@
                         $(".datosClientes").attr("readonly", true);
                         $("#guardarEdicionCliente").hide();
                         $("#editarCliente").show();
-                        
+
                     },
                     error: function() {
                         alert("error al guardar los datos");
@@ -92,9 +96,10 @@
                 $("#fijoClienteActual").val(data.telefonoFijo);
 
                 $("#nombreFicha").html(data.nombres + " " + data.apellidos);
-                $("#nuevaRegion").val(data.idRegion);
-                nuevoCliente.actions.obtenerComunas(data.idRegion,'nuevaComuna');
-                $("#nuevaComuna").val(data.idComuna);
+
+                $("#regionClienteActual").val(data.idRegion);
+
+                gestion.actions.obtenerComunas(data.idRegion, 'comunaClienteActual', data.idComuna);
                 $("#contenedorDatosCliente").slideDown("fast");
             }
         }

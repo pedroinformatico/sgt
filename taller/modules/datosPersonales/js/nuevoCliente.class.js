@@ -17,14 +17,37 @@
         ui: {
             init: function() {
                 nuevoCliente.ui.setEvents();
+
+                $("#dialogNuevoCliente").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 600,
+                    modal: true,
+                    buttons: {
+                        Cancelar: function() {
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
             },
             setEvents: function() {
+                $("#nuevoRun").blur(function() {
+                    $("#nuevoRun").val($.Rut.formatear($("#nuevoRun").val(), true));
+                });
+
+                $("#nuevaRegion").change(function() {
+                    gestion.actions.obtenerComunas($("#nuevaRegion").val(), "nuevaComuna");
+                });
+
                 $("#guardarNuevoCliente").on("click", function() {
                     if (helper.validarCampos([
                         {id: "nuevoNombre", type: "str", msg: "Debe ingresar un Nombre"},
                         {id: "nuevoApellido", type: "str", msg: "Debe ingresar un Apellido"},
                         {id: "nuevoRun", type: "rut", msg: "Debe ingresar un RUN valido"},
-                        {id: "nuevoCorreo", type: "mail", msg: "Debe ingresar un Correo valido"}],"errorNuevoCliente")) {
+                        {id: "nuevoCorreo", type: "mail", msg: "Debe ingresar un Correo valido"}], "errorNuevoCliente")) {
                         var datos = {
                             run: $("#nuevoRun").val(),
                             nombres: $("#nuevoNombre").val(),
@@ -77,58 +100,9 @@
                     complete: function(data) {
                     }
                 });
-            }, 
-            obtenerRegiones: function(idSelect, idSelectComuna) {
-                $.ajax({
-                    type: 'GET',
-                    url: "datosPersonales/_actions/_obtenerRegiones.php",
-                    contentType: 'json',
-                    dataType: 'json',
-                    cache: false,
-                    success: function(datos) {
-                        nuevoCliente.callbacks.cargarRegiones(datos,idSelect,idSelectComuna);
-                    },
-                    error: function() {
-                        alert("error al guardar los datos");
-                    },
-                    complete: function(data) {
-                    }
-                });  
             },
-            obtenerComunas: function(idRegion, idSelect) {
-                $.ajax({
-                    type: 'GET',
-                    url: "datosPersonales/_actions/_obtenerComunas.php",
-                    contentType: 'json',
-                    dataType: 'json',
-                    cache: false,
-                    data: {idRegion: idRegion},
-                    success: function(datos) {
-                        nuevoCliente.callbacks.cargarComunas(datos,idSelect);
-                        
-                    },
-                    error: function() {
-                        alert("error al guardar los datos");
-                    },
-                    complete: function(data) {
-                    } 
-                });  
-            }
-        },  
+        },
         callbacks: {
-           cargarRegiones: function(arrDatos, idSelect, idSelectComuna) {
-                $('#'+idSelect+' option').remove();
-                for(i = 0; i<arrDatos.length; i++){  
-                    $('#'+idSelect).append('<option onclick="nuevoCliente.actions.obtenerComunas('+arrDatos[i].idRegion+',\''+idSelectComuna+'\')" value='+arrDatos[i].idRegion+'>'+arrDatos[i].nombre + '</option>');
-                }
-                nuevoCliente.actions.obtenerComunas(arrDatos[0].idRegion,idSelectComuna);
-            },
-            cargarComunas: function(arrDatos, idSelect) {
-                $('#'+idSelect+' option').remove();
-                for(i = 0; i<arrDatos.length; i++){  
-                    $('#'+idSelect).append('<option onclick="" value="'+arrDatos[i].idComuna+'">'+arrDatos[i].nombre + '</option>');
-                }
-            }
         }
     };
     nuevoCliente.ui.init();

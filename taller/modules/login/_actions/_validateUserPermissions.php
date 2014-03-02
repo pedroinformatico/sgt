@@ -1,9 +1,10 @@
 <?php
+
 if (!isset($_SESSION)) {
     session_start();
 }
-require_once $_SESSION['__BASESERVER__'].'/base/_config/DefaultIncludes.php';
-require_once $_SESSION['__BASESERVER__'].'/base/lib/MySQL.php';
+require_once $_SESSION['__BASESERVER__'] . '/base/_config/DefaultIncludes.php';
+require_once $_SESSION['__BASESERVER__'] . '/base/lib/MySQL.php';
 
 function validate($module) {
     $profiles = Profiles::getInstance();
@@ -39,11 +40,10 @@ function login($user, $pass) {
         $SM->registerSession(100000, [
             SessionValues::ID_USER => 0,
             SessionValues::USER_NAME => "administrador",
-            SessionValues::ID_ROLE=> "Administrador"]);
+            SessionValues::ID_ROLE => "Administrador"]);
         $loginOk = true;
         return ["status" => "ok", "module" => "gestionDeFichas"];
     } /// Fin if
-
 //    if ($loginOk != true) {
 //        $sql = "select id,usuario,rol  from orlandi_usuarios where usuario= '"
 //                . mysql_real_escape_string($user) . "' AND clave = '"
