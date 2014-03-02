@@ -63,7 +63,7 @@
                 $('#patentes option').remove();
                 if (arrDatos.length > 0) {
                     for (i = 0; i < arrDatos.length; i++) {
-                        $("#patentes").append('<option onclick="visitas.actions.obtenerVisitasPorAuto(' + arrDatos[i].idAuto + ')" value=' + arrDatos[i].idAuto + '>' + arrDatos[i].patente + ' '
+                        $("#patentes").append('<option value=' + arrDatos[i].idAuto + '>' + arrDatos[i].patente + ' '
                                 + arrDatos[i].marca + ' ' + arrDatos[i].modelo + '</option>');
                     }
                     visitas.actions.obtenerVisitasPorAuto(arrDatos[0].idAuto);
