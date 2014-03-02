@@ -28,7 +28,7 @@
         actions: {
             insertarNota: function(descripcion, idVisita) {
 
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_agregarNota.php",
                     contentType: 'json',
@@ -46,7 +46,7 @@
 
             },
             obtenerNotasPorVisita: function(idVisita) {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_obtenerNotasPorVisitas.php",
                     contentType: 'json',

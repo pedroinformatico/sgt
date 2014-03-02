@@ -57,7 +57,7 @@
                 },
                 actions: {
                     logUser: function(user, pass) {
-                        jQuery.ajax({
+                        $.ajax({
                             type: 'GET',
                             url: "login/_actions/loginCallback.php",
                             contentType: 'json',

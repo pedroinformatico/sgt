@@ -25,7 +25,7 @@
         },
         actions: {
             obtenerPatentes: function(runCliente) {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_obtenerPatentes.php",
                     contentType: 'json',
@@ -41,7 +41,7 @@
                 });
             },
             obtenerVisitasPorAuto: function(idAuto) {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_obtenerVisitasPorAuto.php",
                     contentType: 'json',

@@ -30,7 +30,7 @@
         },
         actions: {
             agregarVehiculo: function(marca,modelo,patente,anio,kilometraje,vin, runCliente) {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_nuevoVehiculo.php",
                     contentType: 'json',
@@ -47,7 +47,7 @@
                 });
             },
             obtenerMarcas: function() {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_obtenerMarcas.php",
                     contentType: 'json',

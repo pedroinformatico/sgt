@@ -28,7 +28,7 @@
         },
         actions: {
             insertarNuevaVisita: function(runCliente, kilometraje, fechaIngreso, descripcion, idAuto) {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_guardarNuevaVisita.php",
                     contentType: 'json',

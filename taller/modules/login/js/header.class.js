@@ -14,7 +14,7 @@
         },
         actions: {
             logout: function() {
-                jQuery.ajax({
+                $.ajax({
                     type: 'GET',
                     url: "login/_actions/logoutCallback.php",
                     contentType: 'json',
