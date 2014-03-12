@@ -3,16 +3,18 @@
         <tr>
             <td>Kilometraje</td>
             <td>Fecha Ingreso</td>
+            <td>OT</td>
         </tr>   
         <tr>
             <td><input type="text" id="nuevoVisitaKilometraje"/></td>
             <td><input type="text" id="nuevoVisitaFechaIngreso"/></td>
+            <td><input type="text" id="nuevoVisitaOT"/></td>
         </tr>
         <tr>
-            <td colspan="2">Descripción</td>
+            <td colspan="3">Descripción</td>
         </tr>
         <tr>
-            <td colspan="2"><textarea id="nuevoVisitaDescripcion"></textarea></td>
+            <td colspan="3"><textarea id="nuevoVisitaDescripcion" cols="66"></textarea></td>
         </tr>
         
     </table>

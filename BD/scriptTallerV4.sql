@@ -74,6 +74,7 @@ CREATE TABLE `visita` (
   `descripcion` varchar(200) NULL,  
   `fechaIngreso` DATETIME NULL, 
   `fechaRegistro` DATETIME NULL,
+  `ot` VARCHAR(20) NULL,
   PRIMARY KEY (`idVisita`))
 COMMENT = 'La tabla ficha guarda el id de cliente y e id del auto del cual est· relacionado, una ficha debe tener un ˙nico cliente y vehÌculo';
 

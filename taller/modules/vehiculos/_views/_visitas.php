@@ -14,8 +14,10 @@
             <thead>
                 <tr>
                     <th>Fecha</th>
+                    <th>OT</th>
                     <th>Kilometraje</th>
                     <th>Detalle</th>
+                    <th></th>
                     <th></th>
                 </tr>
             </thead>
@@ -35,3 +37,4 @@
 </div>
 
 <script type="text/javascript" src="./vehiculos/js/visitas.class.js"></script>
+<script type="text/javascript" src="./vehiculos/js/visitaImprimir.class.js"></script>

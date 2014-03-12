@@ -11,9 +11,10 @@ $kilometraje = isset($_REQUEST["kilometraje"]) ? $_REQUEST["kilometraje"] : "";
 $fechaIngreso = isset($_REQUEST["fechaIngreso"]) ? $_REQUEST["fechaIngreso"] : "";
 $descripcion = isset($_REQUEST["descripcion"]) ? $_REQUEST["descripcion"] : "";
 $runCliente = isset($_REQUEST["runCliente"]) ? $_REQUEST["runCliente"] : "";
+$ot = isset($_REQUEST["ot"]) ? $_REQUEST["ot"] : "";
 
 
 $cliente =  obtenerClientePorRun($runCliente);
-$idVisita = insertarVisita($cliente->idCliente, $idAuto, $kilometraje, $fechaIngreso, $descripcion);
+$idVisita = insertarVisita($cliente->idCliente, $idAuto, $kilometraje, $fechaIngreso, $descripcion, $ot);
 
 ?>

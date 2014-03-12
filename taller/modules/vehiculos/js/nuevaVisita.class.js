@@ -22,19 +22,20 @@
                   $("#nuevoVisitaKilometraje").val(), 
                   $("#nuevoVisitaFechaIngreso").val(), 
                   $("#nuevoVisitaDescripcion").val(),
-                  $("#patentes").val());
+                  $("#patentes").val(),
+                  $("#nuevoVisitaOT").val());
                 });
             }
         },
         actions: {
-            insertarNuevaVisita: function(runCliente, kilometraje, fechaIngreso, descripcion, idAuto) {
+            insertarNuevaVisita: function(runCliente, kilometraje, fechaIngreso, descripcion, idAuto, ot) {
                 $.ajax({
                     type: 'GET',
                     url: "vehiculos/_actions/_guardarNuevaVisita.php",
                     contentType: 'json',
                     dataType: 'json',
                     cache: false,
-                    data: {runCliente:runCliente, kilometraje:kilometraje, fechaIngreso:fechaIngreso, descripcion:descripcion, idAuto:idAuto},
+                    data: {runCliente:runCliente, kilometraje:kilometraje, fechaIngreso:fechaIngreso, descripcion:descripcion, idAuto:idAuto, ot:ot},
                     success: function() {
                         $("#dialogNuevaVisita").dialog("close");
                         visitas.actions.obtenerVisitasPorAuto($("#patentes").val());

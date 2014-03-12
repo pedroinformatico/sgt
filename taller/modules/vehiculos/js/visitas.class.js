@@ -74,9 +74,11 @@
                 for (i = 0; i < arrDatos.length; i++) {
                     $('#tablaHistorialAutos').dataTable().fnAddData([
                         arrDatos[i].fechaIngreso + "",
+                        arrDatos[i].ot + "",
                         arrDatos[i].kilometraje + "",
-                        arrDatos[i].descripcion + "",
-                        '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idVisita + '\'); " value="Editar">'
+                        arrDatos[i].descripcion + "",     
+                        '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idVisita + '\'); " value="Editar">',
+                         '<input  type="submit" class="button" onclick="visitaImprimir.actions.abrirFichaImpresion(\'' + arrDatos[i].idVisita + '\'); " value="Imprimir">'
                     ]);
                 }
             }

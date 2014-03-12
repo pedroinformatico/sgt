@@ -17,19 +17,20 @@ function obtenerVisitasPorIdAuto($idAuto){
             f.kilometraje,
             f.descripcion,
             f.fechaIngreso,
-            f.fechaRegistro
+            f.fechaRegistro,
+            f.ot
             FROM visita AS f  WHERE  f.idAuto = {$idAuto}";
-    error_log($sql);
+    //error_log($sql);
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->loadObjectList();
 }
 
 
-function insertarVisita($idCliente,$idAuto,$kilometraje, $fechaIngreso, $descripcion){
-    $sql = "INSERT INTO visita (idCliente,idAuto,kilometraje,fechaRegistro,  fechaIngreso, descripcion)
-            VALUES ({$idCliente},{$idAuto},{$kilometraje}, curdate(), '{$fechaIngreso}','{$descripcion}');";
-    error_log($sql);        
+function insertarVisita($idCliente,$idAuto,$kilometraje, $fechaIngreso, $descripcion, $ot){
+    $sql = "INSERT INTO visita (idCliente,idAuto,kilometraje,fechaRegistro,  fechaIngreso, descripcion, ot)
+            VALUES ({$idCliente},{$idAuto},{$kilometraje}, curdate(), '{$fechaIngreso}','{$descripcion}','{$ot}');";
+    //error_log($sql);        
     $db = MySQL::getInstance();
     $db->setQuery($sql);
     return $db->insert(); //Retorna id del insert
