@@ -2,21 +2,21 @@
 /**============================== Reset CSS ==============================**/
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tfoot, thead, tr, th, td { 					margin: 0px;
-						padding: 0px;
-						border: 0px;
-						outline: 0px;
-						vertical-align: baseline;
-						}
+                                                                                                                                                                                                        padding: 0px;
+                                                                                                                                                                                                        border: 0px;
+                                                                                                                                                                                                        outline: 0px;
+                                                                                                                                                                                                        vertical-align: baseline;
+}
 body {					margin:0px;
-						width:100%;
-						height:100%;
-						position:relative;
-						}
+           width:100%;
+           height:100%;
+           position:relative;
+}
 blockquote, q { 		quotes: none; }
 blockquote:before, blockquote:after, q:before, q:after {
-						content: '';
-						content: none;
-						}
+    content: '';
+    content: none;
+}
 :focus { 				outline: 0; }
 ins { 					text-decoration: none; }
 del { 					text-decoration: line-through; }
@@ -35,30 +35,30 @@ table { 				border-collapse: collapse; }
 .fl { 					float:left; }
 .fr { 					float:right; }
 .clearfix:after { 		visibility: hidden;
-						display: block;
-						font-size: 0;
-						content: " ";
-						clear: both;
-						height: 0;
-						}
+                    display: block;
+                    font-size: 0;
+                    content: " ";
+                    clear: both;
+                    height: 0;
+}
 
 
 /**============================== Body Styles & Wrapper ==============================**/
 
 html { 					font: 62.5% Arial, Helvetica, sans-serif;
-						line-height: 2.4em;
-						}
+            line-height: 2.4em;
+}
 .wrapper { 				width:95%;				/** Change this to px to make the layout fixed! **/
-						margin: 0px auto;
-						position:relative;
-						}
+               margin: 0px auto;
+               position:relative;
+}
 
 #content_bg { 			padding-bottom:100px; }
 
 .content { 				font-size:1.3em;
-						padding-top: 35px;
-						
-						}
+               padding-top: 35px;
+
+}
 
 
 /**============================== Element Styling ==============================**/
@@ -67,10 +67,10 @@ a { 					text-decoration:none; }
 
 
 h1, h2, h3, h4, h5, h6 {
-						margin-top:20px;								/** Equal margin on top for all headings **/
-						margin-bottom:.3em;								/** Variable margin on bottom for all headings **/
-						font: normal 1em Arial, Helvetica, sans-serif;	/** Reset all Headings **/
-						}
+    margin-top:20px;								/** Equal margin on top for all headings **/
+    margin-bottom:.3em;								/** Variable margin on bottom for all headings **/
+    font: normal 1em Arial, Helvetica, sans-serif;	/** Reset all Headings **/
+}
 h1 { 					font-size: 2.4em; }
 h2 { 					font-size: 2.1em; }
 h3 { 					font-size: 1.9em; }
@@ -79,23 +79,23 @@ h5 { 					font-size: 1.7em; }
 h6 { 					font-size: 1.5em; }
 
 hr { 					height:1px;
-						margin:2em 0px;
-						border-bottom: 1px solid;
-						border-top-style: none;
-						border-right-style: none;
-						border-left-style: none;
-						}
+          margin:2em 0px;
+          border-bottom: 1px solid;
+          border-top-style: none;
+          border-right-style: none;
+          border-left-style: none;
+}
 td, th { 				padding:5px;
-						display:table-cell;
-						}
+             display:table-cell;
+}
 p { 					margin: 0em 0px 1em; }
 ol { 					list-style:decimal inside; }
 ul { 					list-style:disc inside; }
 blockquote { 			font-style:italic;
-						padding-left:4em;
-						background: no-repeat left top;
-						margin:3em 0px 3em 0px;
-						}
+                padding-left:4em;
+                background: no-repeat left top;
+                margin:3em 0px 3em 0px;
+}
 
 
 
@@ -104,43 +104,43 @@ blockquote { 			font-style:italic;
 fieldset { 				padding: 1em; }
 fieldset legend { 		font-weight: bold; }
 form label { 			font-size:1.0em;
-						font-weight:bold;
-						display:block;
-						margin-bottom:5px;
-						margin-top: 15px;
-						}
+                font-weight:bold;
+                display:block;
+                margin-bottom:5px;
+                margin-top: 15px;
+}
 form p small { 			font-size: 0.75em;
-						display:block;
-						}
+                  display:block;
+}
 form input.textfield, form select, form textarea, form .wysiwyg {
-						padding:6px;
-						margin-right:10px;
-						}
+    padding:6px;
+    margin-right:10px;
+}
 form input.small { 		width:40%; }
 form input.med { 		width:60%; }
 form input.large { 		width:95%; }
 form textarea, form .wysiwyg {
-						font-family: Arial, Helvetica, sans-serif;
-						width: 95%;
-						font-size:1em;
-						}
+    font-family: Arial, Helvetica, sans-serif;
+    width: 95%;
+    font-size:1em;
+}
 form input[type="checkbox"], form input[type="radio"] {
-						padding: 0;
-						background: none;
-						border: 0;
-						}
+    padding: 0;
+    background: none;
+    border: 0;
+}
 .wysiwyg { 				width:auto !important; }
 
 
 /******* Form Hints and Errors **********/
 .form_error { 			font-style: italic;
-						font-size: 0.9em;
-						padding-left: 20px;
-						}
+                 font-size: 0.9em;
+                 padding-left: 20px;
+}
 .form_hint { 			font-style: italic;
-						font-size: 0.9em;
-						padding-left: 20px;
-						}
+                font-size: 0.9em;
+                padding-left: 20px;
+}
 
 
 
@@ -149,184 +149,185 @@ form input[type="checkbox"], form input[type="radio"] {
 
 .button, .button2 { 	padding: 6px 20px 7px;
 
-						cursor: pointer;
-						font-weight:bold;
-						margin-right:10px;
-						position:relative;
-						outline:none;
-						}
+                     cursor: pointer;
+                     font-weight:bold;
+                     margin-right:10px;
+                     position:relative;
+                     outline:none;
+}
 .button:active, .button2:active { 
-						top: 1px;}
+    top: 1px;}
 
 
 /**============================== Header ==============================**/
 
 #header_bg { 			height:194px; }
 #header_top { 			font-size:1.2em;
-						padding-top:8px;
-						height: 27px;
-						}
+                 padding-top:8px;
+                 height: 27px;
+}
 #header_top a { 		text-decoration:none;
-						margin-right:15px;
-						}
+                  margin-right:15px;
+}
 #header_top a:hover { 	text-decoration:underline; }
 
 
 /************ Logo ***********/
-#logo { 				float:left;
-						margin:20px 0px 0px;
-						display:block;
-						text-indent:-9999px;
-						}
+#logo { 				
+            float:left;
+            margin:20px 0px 0px;
+            display:block;
+            text-indent:-9999px;
+}
 
 /************ Search field in Header ************/
 .header_search { 		float:right;
-						margin-top: 25px;
-						width:280px;
-						}
+                   margin-top: 25px;
+                   width:280px;
+}
 .search_field { 		font-style: italic;
-						width: 220px;
-						padding: 5px 30px 5px 5px;
-						float:right;
-						right:-20px;
-						position:relative;
-						z-index:2;
-						margin:0px;
-						}
+                  width: 220px;
+                  padding: 5px 30px 5px 5px;
+                  float:right;
+                  right:-20px;
+                  position:relative;
+                  z-index:2;
+                  margin:0px;
+}
 .search_icon { 			float:right;
-						position:relative;
-						top:5px;
-						right:5px;
-						z-index:3;
-						}
+                  position:relative;
+                  top:5px;
+                  right:5px;
+                  z-index:3;
+}
 
 
 /**============================== Main Navigation ==============================**/
 
 #main_nav { font-size:1.4em;
-						list-style: none;
-						margin:32px 0 0;
-						text-transform: uppercase;
-						}
+            list-style: none;
+            margin:32px 0 0;
+            text-transform: uppercase;
+}
 #main_nav a { 			text-decoration:none; }
 #main_nav li { 			display:inline;
-						float:left;
-						}
+                  float:left;
+}
 #main_nav li a { 		display:block;
-						padding:8px 18px 10px;
-						margin:0px;
-						}
+                   padding:8px 18px 10px;
+                   margin:0px;
+}
 #main_nav li a.current {
-						margin:0px;
-						display:inline-block;
-						}
+    margin:0px;
+    display:inline-block;
+}
 
 
 /**============================== Sub Navigation ==============================**/
 
 #main_nav li ul { 		position: absolute;
-						left:0px;
-						top:155px;
-						height: 28px;
-						}
+                    left:0px;
+                    top:155px;
+                    height: 28px;
+}
 #main_nav li ul li {
-						text-transform:capitalize;
-						list-style: none;
-						float: left;
-						font-size: 0.85em;
-						margin-right: 0px;
-						height: 25px;
-						}
+    text-transform:capitalize;
+    list-style: none;
+    float: left;
+    font-size: 0.85em;
+    margin-right: 0px;
+    height: 25px;
+}
 #main_nav li ul li a { 	text-decoration: none; }
 #main_nav li ul li a:hover {
-						text-decoration: underline; }
+    text-decoration: underline; }
 #main_nav li ul li a.current {
-						font-weight:bold;
-						height: 21px;
-						text-decoration: none;
-						}
+    font-weight:bold;
+    height: 21px;
+    text-decoration: none;
+}
 
 /**============================== Navigation in box header ==============================**/
 
 .box .header .sub_nav {
-						position:absolute;
-						top:0px;
-						right:0px;
-						}
+    position:absolute;
+    top:0px;
+    right:0px;
+}
 .box .header .sub_nav li {
-						text-transform:uppercase;
-						list-style:none;
-						display:inline-block;
-						margin:0px 5px;
-						font-size:0.6em;
-						letter-spacing: 0.05em;
-						float:left;
-						}
+    text-transform:uppercase;
+    list-style:none;
+    display:inline-block;
+    margin:0px 5px;
+    font-size:0.6em;
+    letter-spacing: 0.05em;
+    float:left;
+}
 .box .header .sub_nav li a {
-						display:block;
-						text-decoration:none;
-						padding:5px 10px;
-						}
+    display:block;
+    text-decoration:none;
+    padding:5px 10px;
+}
 .sub_nav .current, .sub_nav .current:hover, .sub_nav .current a {
-						display:block;
-						padding:5px 10px;
-						}
+    display:block;
+    padding:5px 10px;
+}
 
 
 /** ============================== Vertical Nav ============================== **/
 
 .vertical_nav { 		padding:0px 0px 0px 10px;
-						font-size:1em;
-						float: left;
-						width: 170px;
-						list-style-position:outside;
-						}
+                  font-size:1em;
+                  float: left;
+                  width: 170px;
+                  list-style-position:outside;
+}
 .vertical_nav li { 		list-style:none;
-						margin:0px 0px 10px 0px;
-						}
+                     margin:0px 0px 10px 0px;
+}
 .vertical_nav li a { 	padding-left:10px; }
 .vertical_nav li .current {
-						display:block;
-						height:25px;
-						text-decoration:none !important;
-						}
+    display:block;
+    height:25px;
+    text-decoration:none !important;
+}
 
 /************* Box body with vertical Navigation *************/
 .body_vertical_nav { 	padding:20px 0px; }
 .body_vertical_nav .main_column {
-						margin: 0px 0px 0px 180px;
-						padding:0px 15px;
-						}
+    margin: 0px 0px 0px 180px;
+    padding:0px 15px;
+}
 .panes .pane { 			display:none; }					/* Hide Panes */
 
 
 /** ============================== Horizontal Nav ============================== **/
 
 .horizontal_nav {
-						padding:10px 0px 0px 10px;
-						margin-bottom:25px;
-						height:37px;
-						font-size:0.9em;
-						}
+    padding:10px 0px 0px 10px;
+    margin-bottom:25px;
+    height:37px;
+    font-size:0.9em;
+}
 .horizontal_nav li {
-						float:left;
-						list-style:none;
+    float:left;
+    list-style:none;
 
-						}
+}
 .horizontal_nav li a {
-						text-decoration:none;
-						padding:6px 15px;
-						list-style:none;
-						margin-right:5px;
-						display:block;
+    text-decoration:none;
+    padding:6px 15px;
+    list-style:none;
+    margin-right:5px;
+    display:block;
 }
 .horizontal_nav li a:hover {
-						text-decoration:underline; }
+    text-decoration:underline; }
 .horizontal_nav li a.current{
-						display:block;
-						padding:6px 15px;
-						font-weight: bold;
-						text-decoration:none;
+    display:block;
+    padding:6px 15px;
+    font-weight: bold;
+    text-decoration:none;
 }
 
 
@@ -334,31 +335,31 @@ form input[type="checkbox"], form input[type="radio"] {
 
 /* accordion header */
 #accordion h2, .accordion h2 { 		margin:0;
-						font-size:1.0em;
-						padding:5px 15px;
-						font-weight:normal;
-						cursor:pointer;
-						position:relative;
-						}
+                                 font-size:1.0em;
+                                 padding:5px 15px;
+                                 font-weight:normal;
+                                 cursor:pointer;
+                                 position:relative;
+}
 /* currently active header */
 #accordion h2.current, .accordion h2.current { cursor:default; }
 /* accordion header arrows */
 #accordion h2 .arrow_down, #accordion h2 .arrow_right,.accordion h2 .arrow_down, .accordion h2 .arrow_right {
-						position:absolute;
-						top:10px;
-						right:10px;
-						}
+    position:absolute;
+    top:10px;
+    right:10px;
+}
 #accordion h2 .arrow_down, .accordion h2 .arrow_down {
-						display:none }
+    display:none }
 #accordion h2.current .arrow_right, .accordion h2.current .arrow_right {
-						display:none; }
+    display:none; }
 #accordion h2.current .arrow_down, .accordion h2.current .arrow_down {
-						display:block; }
+    display:block; }
 /* Accordion pane */
 #accordion div.pane, .accordion div.pane { 	display:none;
-						padding:10px 20px;
-						font-size:1em;
-						}
+                                            padding:10px 20px;
+                                            font-size:1em;
+}
 
 
 
@@ -366,35 +367,35 @@ form input[type="checkbox"], form input[type="radio"] {
 /**============================== Page Layout with Sidebar ==============================**/	
 
 .sidebar { 				width:250px;                     /*specify sidebar width here*/
-						float:right;
-						margin:0px 0px 0px 25px;
-						}
+               float:right;
+               margin:0px 0px 0px 25px;
+}
 .main_column { 			margin-right: 270px;}   		/*specify column width here, should be sidebar width + 20px*/
-	
+
 .column-left { 			width: 49%;
-						float: left;
-						}
+                  float: left;
+}
 .column-right { 		width: 49%;
-						float: right;
-						}
+                  float: right;
+}
 
 /**============================== Small Box in Sidebar ==============================**/
 
 .small_box { 			margin-bottom:15px; }
 .small_box .header { 	height: 30px;
-						font-size:1.3em;
-						line-height: 1.8em;
-						padding:0px 12px;
-						}
+                      font-size:1.3em;
+                      line-height: 1.8em;
+                      padding:0px 12px;
+}
 .small_box .header img {
-						position:relative;
-						top:2px;
-						float:right;
-						}
+    position:relative;
+    top:2px;
+    float:right;
+}
 .small_box .body {
-						padding: 15px 12px;
-						font-size:.9em;
-						}
+    padding: 15px 12px;
+    font-size:.9em;
+}
 
 
 
@@ -402,43 +403,43 @@ form input[type="checkbox"], form input[type="radio"] {
 
 .box { 					margin-bottom:15px; }
 .box .header {
-						height: 40px;
-						font-size:1.5em;
-						line-height: 1.8em;
-						padding:0px 15px;
-						position:relative;
-						}
+    height: 40px;
+    font-size:1.5em;
+    line-height: 1.8em;
+    padding:0px 15px;
+    position:relative;
+}
 .box .header img {
-						position:relative;
-						top:5px;
-						margin-right: 10px;
-						}
+    position:relative;
+    top:5px;
+    margin-right: 10px;
+}
 .box .body { 			padding: 20px; }
 
 
 /**============================== Tables ==============================**/
 
 .grid_table { 			font-size: 0.9em;
-						margin-bottom:25px;
-						}
+                 margin-bottom:25px;
+}
 .grid_table th { 		font-size:1.1em;
-						padding: 10px;
-						text-align:left;
-						}
+                   padding: 10px;
+                   text-align:left;
+}
 .grid_table td { 		padding:10px; }
 .grid_table td small { 	font-size:0.9em;
-						display:block;
-						}
+                        display:block;
+}
 /** Selected items and dropdown for grid **/					
 tr.grid_dropdown td { 	padding: 20px; }
 
 
 /** Minimize/Mazimize controls **/								
 .grid_table .toggle { 	display:block;
-						width:10px;
-						height:10px;
-						margin:0px auto;
-						}
+                       width:10px;
+                       height:10px;
+                       margin:0px auto;
+}
 .grid_table .collapse { background-position:top right; }
 
 
@@ -447,30 +448,30 @@ tr.grid_dropdown td { 	padding: 20px; }
 /** ============================== Pagination ============================== **/
 
 .pagination { 			text-align:center;
-						height:30px;
-						margin:0px -20px;
-						}
+                 height:30px;
+                 margin:0px -20px;
+}
 .pagination li { 		display:inline;
-						list-style:none;
-						position:relative;
-						top:10px;
-						}
+                   list-style:none;
+                   position:relative;
+                   top:10px;
+}
 .pagination li a { 		padding:15px 10px;
-						line-height:20px;
-						height:50px;
-						}
-						
+                     line-height:20px;
+                     height:50px;
+}
+
 
 /** ============================== Footer ============================== **/
 
 #footer { 				text-align:center;
-						padding:20px 0px;
-						height:50px;
-						position:absolute;
-						width:100%;
-						bottom:0px;
-						font-size:1.1em;
-						}
+              padding:20px 0px;
+              height:50px;
+              position:absolute;
+              width:100%;
+              bottom:0px;
+              font-size:1.1em;
+}
 
 
 
@@ -478,97 +479,97 @@ tr.grid_dropdown td { 	padding: 20px; }
 /** ============================== Bulleted List ============================== **/		
 
 .bulleted_list li { 	list-style: none;
-						padding-left: 15px;
-						line-height: 17px;
-						margin-bottom: 15px;
-						list-style-position:outside;																														
-						}
+                     padding-left: 15px;
+                     line-height: 17px;
+                     margin-bottom: 15px;
+                     list-style-position:outside;																														
+}
 
 
 /** ============================== User List ============================== **/
 .user_list {
-						margin:0px;
-						padding:0px;
-						list-style-position:outside;
-						}
+    margin:0px;
+    padding:0px;
+    list-style-position:outside;
+}
 
 .user_list li { 		font-size:1.2em;
-						padding: 15px 2px;
-						list-style:none;
-						margin:0px;
-						min-height:50px;
-						}
-					
+                  padding: 15px 2px;
+                  list-style:none;
+                  margin:0px;
+                  min-height:50px;
+}
+
 .user_list li img { 	display:inline;
-						margin-right:5px;
-						float:left;
-						}
+                     margin-right:5px;
+                     float:left;
+}
 .user_list li small { 	display:block;
-						font-size:0.8em;
-						}
+                       font-size:0.8em;
+}
 
 /** ==============================  Display styles for Error Messages, Notifications and General Info ============================== **/
 
 div.info, div.warning, div.error {
-						margin: 1.5em 0;
-						padding:10px;
-						position:relative;
-						}
+    margin: 1.5em 0;
+    padding:10px;
+    position:relative;
+}
 .info .icon, .warning .icon, .error .icon {
-						margin-right:15px;
-						float:left;
-						}
+    margin-right:15px;
+    float:left;
+}
 .close_notification { 	position:absolute;
-						top:0px;
-						right:8px;
-						}
+                       top:0px;
+                       right:8px;
+}
 
 
 
 /** ============================== Tooltip ============================== **/
 .tooltip, .tooltip.bottom {
-						display:none;
-						font-size:1.2em;
-						padding:5px 10px;
-						line-height:1.3em;
-						text-align:center;
-						}
+    display:none;
+    font-size:1.2em;
+    padding:5px 10px;
+    line-height:1.3em;
+    text-align:center;
+}
 
 /**  ============================== Jump Menu ============================== **/
 
 .jump_menu { 			position:absolute;
-						top:120px;
-						right:0px;
-						z-index:500;
-						}
+                top:120px;
+                right:0px;
+                z-index:500;
+}
 .jump_menu_btn { 		width:158px;
-						height:28px;
-						cursor:pointer;
-						z-index:500;
-						display:block;
-						text-indent:-9999px;
-						position:relative;
-						}
+                   height:28px;
+                   cursor:pointer;
+                   z-index:500;
+                   display:block;
+                   text-indent:-9999px;
+                   position:relative;
+}
 .jump_menu_btn.active { background-position:bottom left;}
 .jump_menu_list { 		display:none;
-						position:absolute;
-						top:10px;
-						right:0px;
-						padding:20px 0px 10px;
-						font-size:1.2em;
-						width:155px;
+                    position:absolute;
+                    top:10px;
+                    right:0px;
+                    padding:20px 0px 10px;
+                    font-size:1.2em;
+                    width:155px;
 
-						}
+}
 .jump_menu_list li { 	list-style:none; }
 .jump_menu_list li a { 	display:block;
-						text-decoration:none;
-						padding:5px 20px;
-						}
+                        text-decoration:none;
+                        padding:5px 20px;
+}
 .jump_menu_list li a img {
-						float:left;
-						position:relative;
-						left:-10px;
-						}
+    float:left;
+    position:relative;
+    left:-10px;
+}
 
 /**============================== Login Page ====================================**/
 
@@ -581,16 +582,16 @@ div.info, div.warning, div.error {
 /** ============================== Overlay ============================== **/
 
 #facebox { 				/* overlay is hidden before loading */
-						display:none;
-						width:400px;
-						}
+    display:none;
+    width:400px;
+}
 #facebox div { 			padding:10px;
-						font-size:1.2em;
-						}
+                  font-size:1.2em;
+}
 #facebox h2 { 			margin:-10px;
-						margin-bottom:1em;
-						padding:5px 10px;
-						}
+                 margin-bottom:1em;
+                 padding:5px 10px;
+}
 
 
 
@@ -784,7 +785,7 @@ tfoot input { margin: 0.5em 0; width: 100%; color: #444; }
 tfoot input.search_init { color: #999; }
 td.group { background-color: #d1cfd0; border-bottom: 2px solid #A19B9E; border-top: 2px solid #A19B9E; }
 td.details { background-color: #FFF;
-border: 1px solid #CADCFF; }
+             border: 1px solid #CADCFF; }
 .example_alt_pagination div.dataTables_info { width: 40%; }
 .paging_full_numbers { width: 400px; height: 22px; line-height: 22px; }
 .paging_full_numbers span.paginate_button, .paging_full_numbers span.paginate_active { border: 1px solid #aaa; padding: 2px 5px; margin: 0 3px; cursor: pointer; }
@@ -805,14 +806,14 @@ tr.even td.sorting_2 { background-color: #F2F3FF; }
 tr.even td.sorting_3 { background-color: #F9F9FF; }
 /* For the Conditional-CSS grading rows */
 /*
- 	Colour calculations (based off the main row colours)
+        Colour calculations (based off the main row colours)
   Level 1:
-		dd > c4
-		ee > d5
-	Level 2:
-	  dd > d1
-	  ee > e2
- */
+                dd > c4
+                ee > d5
+        Level 2:
+          dd > d1
+          ee > e2
+*/
 tr.odd.gradeA td.sorting_1 { background-color: #eeeeee; }
 tr.odd.gradeA td.sorting_2 { background-color: #d1ffd1; }
 tr.odd.gradeA td.sorting_3 { background-color: #d1ffd1; }
@@ -875,6 +876,8 @@ table.display tr.gradeU { background-color: #ddd; }
 
 .divCenter{
     margin: 3px auto;
+}
 
-
+.labelImprimir{
+    
 }

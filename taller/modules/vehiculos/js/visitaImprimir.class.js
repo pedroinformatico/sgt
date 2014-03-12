@@ -88,7 +88,7 @@
                 $("#imprimirVIN").html(arrDatos.vin);
                 $("#imprimirKilometrajeVisita").html(arrDatos.kilometrosVisita);
                 $("#imprimirFechaIngreso").html(arrDatos.fechaIngreso);
-                $("#imprimirOT").html(arrDatos.ot);
+                $("#imprimirOT").val(arrDatos.ot);
                 $("#imprimirDescripcion").html(arrDatos.imprimirDescripcion);
             },
             limpiarFichaImpresion: function(){

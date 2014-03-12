@@ -1,6 +1,28 @@
 
 <div id="dialogResumenVisita">
     <div id="contenido">
+        
+        <div>
+            <table style="width: 100%">
+                <tr>
+                    <td style="width: 50%">
+                        <div>
+                            <img src="/taller/base/images/logo.png"/>
+                            <center> Atienzo Automotriz <br/>
+                            Dirección: Calle Hevia #0115 Paradero 30 1/2 Quilpué <br/>
+                            <a href="http://www.atienzoautomotriz.cl">www.atienzoautomotriz.cl</a></center>
+                        </div>
+                    </td>
+                    <td>
+                        <div style="float: right">
+                            <label>Orden de Trabajo</label> <br/>
+                            <input id="imprimirOT" type="text" disabled="disabled"/>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
         <fieldset>
             <legend>Datos Personales</legend>
             <table style="width: 100%">
@@ -12,10 +34,10 @@
 
                 </tr>
                 <tr>
-                    <td><label id="imprimirNombre"></label></td>
-                    <td><labe id="imprimirApellido"/></td>
-                <td><labe id="imprimirRUN"/></td>
-                <td><labe id="imprimirCorreo"/></td>
+                    <td><label id="imprimirNombre" class="labelImprimir"></label></td>
+                    <td><label id="imprimirApellido" class="labelImprimir"/></td>
+                <td><label id="imprimirRUN" class="labelImprimir"/></td>
+                <td><label id="imprimirCorreo" class="labelImprimir"/></td>
                 </tr>
                 <tr>
                     <td>Calle</td>
@@ -24,10 +46,10 @@
                     <td>Dpto/Block/Otros</td>                            
                 </tr>
                 <tr>
-                    <td><labe id="imprimirCalle"/></td>
-                <td><labe id="imprimirPoblacion"/></td>
-                <td><labe id="imprimirNumeroDomicilio"/></td>
-                <td><labe id="imprimirDptoBlock"/></td>
+                    <td><label id="imprimirCalle" class="labelImprimir"/></td>
+                <td><label id="imprimirPoblacion" class="labelImprimir"/></td>
+                <td><label id="imprimirNumeroDomicilio" class="labelImprimir"/></td>
+                <td><label id="imprimirDptoBlock" class="labelImprimir"/></td>
                 </tr>
                 <tr>
                     <td>Teléfono Celular</td>
@@ -36,10 +58,10 @@
                     <td>Comuna</td>                            
                 </tr>
                 <tr>
-                    <td><labe id="imprimirTelefonoCelular"/></td>
-                <td><labe id="imprimirTelefonoFijo"/></td>
-                <td><labe id="ImprimirRegion"/></td>
-                <td><labe id="imprimirComuna"/></td>
+                    <td><label id="imprimirTelefonoCelular"/></td>
+                <td><label id="imprimirTelefonoFijo"/></td>
+                <td><label id="ImprimirRegion"/></td>
+                <td><label id="imprimirComuna"/></td>
                 </tr>
             </table>
         </fieldset>
@@ -52,9 +74,9 @@
                     <td>Patente</td>
                 </tr>
                 <tr> 
-                    <td><labe id="imprimirMarca"/></td>
-                <td><labe id="imprimirModelo"/></td>
-                <td><labe id="imprimirPatente"/></td>
+                    <td><label id="imprimirMarca"/></td>
+                <td><label id="imprimirModelo"/></td>
+                <td><label id="imprimirPatente"/></td>
                 </tr>
                 <tr>
                     <td>Año</td>
@@ -62,9 +84,9 @@
                     <td>VIN</td>
                 </tr>
                 <tr>
-                    <td><labe id="imprimirAnio"/></td>
-                <td><labe id="imprimirKilometrajeInicio"/></td>
-                <td><labe id="imprimirVIN"/></td>
+                    <td><label id="imprimirAnio"/></td>
+                <td><label id="imprimirKilometrajeInicio"/></td>
+                <td><label id="imprimirVIN"/></td>
                 </tr>
             </table>
         </fieldset>
@@ -77,9 +99,9 @@
                     <td>OT</td>
                 </tr>   
                 <tr>
-                    <td><labe id="imprimirKilometrajeVisita"/></td>
-                <td><labe id="imprimirFechaIngreso"/></td>
-                <td><labe id="imprimirOT"/></td>
+                    <td><label id="imprimirKilometrajeVisita"/></td>
+                <td><label id="imprimirFechaIngreso"/></td>
+                <td><label /></td>
                 </tr>
                 <tr>
                     <td colspan="3">Descripción</td>

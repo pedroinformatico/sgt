@@ -103,9 +103,18 @@ button[disabled]:active, button[disabled], input[type="reset"][disabled]:active,
 #header_top a { 		color:#fff; }
 
 /********* Logo *********/
-#logo { 				background: url(../images/logo.png) no-repeat left bottom;   /*Specify logo Here*/
-            height: 33px;
-            width: 472px;
+#logo { 				
+    background-image: url(../images/logo.png);
+    height: 33px;
+    width: 472px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+#logoImprimir{
+    background-image: url(../images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 /********* Search field in header ***/
 .search_field { 		border: 1px solid #a2a2a2; }
