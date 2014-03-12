@@ -78,7 +78,7 @@
                         arrDatos[i].kilometraje + "",
                         arrDatos[i].descripcion + "",     
                         '<input  type="submit" class="button" onclick="vehiculos.actions.openEditNotes(\'' + arrDatos[i].idVisita + '\'); " value="Editar">',
-                         '<input  type="submit" class="button" onclick="visitaImprimir.actions.abrirFichaImpresion(\'' + arrDatos[i].idVisita + '\'); " value="Imprimir">'
+                         '<input  type="submit" class="button" onclick="visitaImprimir.actions.abrirFichaImpresion(\'' + arrDatos[i].idVisita + '\'); " value="Detalle">'
                     ]);
                 }
             }

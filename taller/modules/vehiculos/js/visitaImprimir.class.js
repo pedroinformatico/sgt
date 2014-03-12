@@ -3,10 +3,26 @@
     var visitaImprimir = {
         ui: {
             init: function() {
+                $("#dialogResumenVisita").dialog({
+                    autoOpen: false,
+                    resizable: false,
+                    width: 650,
+                    modal: true,
+                    buttons: {
+                        Imprimir: function() {
+                            $('#printeriframe').contents().find('#printcontent').html($("#contenido").html());
+                            window.frames['printeriframe'].printMe();
+                            $(this).dialog("close");
+                        }
+                    },
+                    close: function() {
+
+                    }
+                });
                 visitaImprimir.ui.setEvents();
             },
             setEvents: function() {
-               
+                
             }
         },
         actions: {
@@ -25,7 +41,7 @@
                     data: {idVisita: idVisita},
                     success: function(datos) {
                         visitaImprimir.callbacks.agregarNotas(datos);
-                        
+
                     },
                     error: function() {
 
@@ -36,7 +52,7 @@
         callbacks: {
             agregarNotas: function(arrDatos) {
                 for (var i = 0; i < arrDatos.length; i++) {
-                    $('#imprimirNotas').append(' - ' +arrDatos[i].descripcion + ' <br/>');
+                    $('#imprimirNotas').append(' - ' + arrDatos[i].descripcion + ' <br/>');
                 }
             },
         }

@@ -16,20 +16,7 @@
         ui: {
             init: function() {
                 vehiculos.ui.setEvents();
-                $("#dialogResumenVisita").dialog({
-                    autoOpen: false,
-                    resizable: false,
-                    width: 650,
-                    modal: true,
-                    buttons: {
-                        Cancelar: function() {
-                            $(this).dialog("close");
-                        }
-                    },
-                    close: function() {
-
-                    }
-                });
+                
                 $("#notasVehiculo").dialog({
                     autoOpen: false,
                     resizable: false,
