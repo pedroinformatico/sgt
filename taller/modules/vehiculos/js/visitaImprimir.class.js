@@ -28,7 +28,9 @@
         actions: {
             abrirFichaImpresion: function(id) {
                 $("#dialogResumenVisita").dialog("open");
+                visitaImprimir.callbacks.limpiarFichaImpresion();
                 visitaImprimir.actions.obtenerNotasPorVisita(id);
+                visitaImprimir.actions.obtenerDatosVisita(id);
                 //Logica para realizar las peticiones
             },
             obtenerNotasPorVisita: function(idVisita) {
@@ -41,10 +43,20 @@
                     data: {idVisita: idVisita},
                     success: function(datos) {
                         visitaImprimir.callbacks.agregarNotas(datos);
-
-                    },
-                    error: function() {
-
+                    }
+                });
+            },
+            obtenerDatosVisita: function(idVisita) {
+                $.ajax({
+                    type: 'GET',
+                    url: "vehiculos/_actions/_imprimirVisita.php",
+                    contentType: 'json',
+                    dataType: 'json',
+                    cache: false,
+                    data: {idVisita: idVisita},
+                    success: function(datos) {
+                        visitaImprimir.callbacks.agregarValoresImpresion(datos);
+                        
                     }
                 });
             }
@@ -55,6 +67,33 @@
                     $('#imprimirNotas').append(' - ' + arrDatos[i].descripcion + ' <br/>');
                 }
             },
+            agregarValoresImpresion: function(arrDatos) {
+                $("#imprimirNombre").html(arrDatos.nombres);
+                $("#imprimirApellido").html(arrDatos.apellidos);
+                $("#imprimirRUN").html(arrDatos.run);
+                $("#imprimirCorreo").html(arrDatos.correo);
+                $("#imprimirCalle").html(arrDatos.calle);
+                $("#imprimirPoblacion").html(arrDatos.poblacion);
+                $("#imprimirNumeroDomicilio").html(arrDatos.numeroDomicilio);
+                $("#imprimirDptoBlock").html(arrDatos.depto);
+                $("#imprimirTelefonoCelular").html(arrDatos.telefonoCelular);
+                $("#imprimirTelefonoFijo").html(arrDatos.telefonoFijo);
+                $("#ImprimirRegion").html(arrDatos.nombreRegion);
+                $("#imprimirComuna").html(arrDatos.nombreComuna);
+                $("#imprimirMarca").html(arrDatos.nombreMarca);
+                $("#imprimirModelo").html(arrDatos.modelo);
+                $("#imprimirPatente").html(arrDatos.patente);
+                $("#imprimirAnio").html(arrDatos.anio);
+                $("#imprimirKilometrajeInicio").html(arrDatos.kilometrosInicio);
+                $("#imprimirVIN").html(arrDatos.vin);
+                $("#imprimirKilometrajeVisita").html(arrDatos.kilometrosVisita);
+                $("#imprimirFechaIngreso").html(arrDatos.fechaIngreso);
+                $("#imprimirOT").html(arrDatos.ot);
+                $("#imprimirDescripcion").html(arrDatos.imprimirDescripcion);
+            },
+            limpiarFichaImpresion: function(){
+                //limpiar los datos
+            }
         }
     };
     visitaImprimir.ui.init();

@@ -8,6 +8,28 @@ require_once $_SESSION['__BASESERVER__'].'/base/lib/MySQL.php';
 require_once $_SESSION['__BASESERVER__'].'/base/_config/SessionValues.php';
 
 
+function obtenerDatosVisitaImprimir($idVisita){
+    $sql = "SELECT 
+            v.*,
+            c.*,
+            a.*,
+            v.kilometraje kilometrosVisita,
+            a.kilometraje kilometrosInicio,
+            pc.nombre nombreComuna,
+            pr.nombre nombreRegion,
+            pm.nombre nombreMarca
+            FROM visita AS v
+            INNER JOIN cliente AS c ON c.idCliente = v.idCliente
+            INNER JOIN auto AS a ON a.idAuto = v.idAuto
+            INNER JOIN par_comuna pc ON pc.idComuna = c.idComuna
+            INNER JOIN par_region pr ON pr.idRegion = pc.idRegion
+            INNER JOIN par_marca pm ON pm.idMarca = a.marca
+            WHERE v.idVisita = {$idVisita}";
+    $db = MySQL::getInstance();
+    $db->setQuery($sql);
+    return $db->loadObject();
+}
+
 function relacionarClienteAuto($idAuto, $idCliente){
     $sql = "INSERT INTO cliente_auto (idAuto,idCliente) 
             VALUES ({$idAuto},{$idCliente});";
